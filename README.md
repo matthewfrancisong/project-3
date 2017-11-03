@@ -1,4 +1,6 @@
-# README
+# Project-3 (Matt, Ray & Shui)
+
+cool stuff here!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
