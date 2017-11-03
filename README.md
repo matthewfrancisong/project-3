@@ -1,4 +1,4 @@
-# README
+# PROJECT 3 (Matthew, Ray and Shui)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
