@@ -1,5 +1,7 @@
 # Project-3 (Matt, Ray & Shui)
 
+Ray is handsome
+
 cool stuff here!
 
 This README would normally document whatever steps are necessary to get the
