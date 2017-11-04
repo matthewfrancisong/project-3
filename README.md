@@ -9,20 +9,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version 666
+* Ruby version
 
-* System dependencies 666
+* System dependencies
 
-* Configuration 666
+* Configuration
 
-* Database creation 666
+* Database creation
 
-* Database initialization 666
+* Database initialization
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.) 666
+* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions 666
+* Deployment instructions
 
-* ... 666 666 666 666 666 666 666 666 666 666
+* ...          

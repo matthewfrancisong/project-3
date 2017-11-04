@@ -1,0 +1,53 @@
+header, main, footer {
+     padding-left: 300px;
+   }
+@media only screen and (max-width : 992px) {
+     header, main, footer {
+       padding-left: 0;
+     }
+   }
+
+h1 {
+    font-style: italic;
+    text-align: center;
+}
+
+p {
+  font-size: 40px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    width: 85%;
+}
+
+#homeOne{
+  width: 100%;
+}
+
+#slide-out {
+  width: 12%;
+}
+
+#resize {
+    width: 400px;
+    height: auto;
+}
+
+#navOne {
+  padding: 25px 40%;
+  margin: 57% 0px;
+  height: 100px;
+  width: 100%;
+}
+
+#navTwo {
+  padding: 25px 40%;
+  margin: 150% 0px;
+  height: 100px;
+  width: 100%;
+}
