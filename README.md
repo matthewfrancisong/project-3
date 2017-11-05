@@ -3,10 +3,10 @@
 
 ### Wireframes
 #### Main template
-![template](/project-log/Wireframe template.png)
+![template](/project-log/template.png)
 
 ### Event details
-![eventdetails](/project-log/eventdetails.png)
+![eventdetails](/project-log/event.png)
 
 ### Add Guest
 ![addguest](/project-log/addguest.png)
