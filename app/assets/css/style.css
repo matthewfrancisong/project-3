@@ -25,28 +25,41 @@ main {
     width: 85%;
 }
 
+div.wrapper{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.title{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:50%; /* position will be on bottom */
+	width:100%;
+	color:black;
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+h1.title{
+  font-size: 100px;
+  font-weight: 500;
+  font-family: cursive;
+}
+
 #homeOne{
   width: 100%;
 }
 
 #slide-out {
-  width: 12%;
-}
-
-#resize {
-    width: 400px;
-    height: auto;
+  width: 11%;
 }
 
 #navOne {
-  padding: 25px 40%;
-  margin: 57% 0px;
+  padding: 25px 35%;
+  margin: 60% 0px;
   height: 100px;
   width: 100%;
 }
 
 #navTwo {
-  padding: 25px 40%;
+  padding: 25px 35%;
   margin: 150% 0px;
   height: 100px;
   width: 100%;
