@@ -6,9 +6,10 @@ one:
   password: MyString
   title: MyString
   date: 2017-11-06
+  time: 2017-11-06 19:55:05
   location: MyString
-  time: 2017-11-06 14:36:08
-  programme: MyString
+  num_table: 1
+  num_seat: 1
 
 two:
   name: MyString
@@ -16,6 +17,7 @@ two:
   password: MyString
   title: MyString
   date: 2017-11-06
+  time: 2017-11-06 19:55:05
   location: MyString
-  time: 2017-11-06 14:36:08
-  programme: MyString
+  num_table: 1
+  num_seat: 1

@@ -6,9 +6,10 @@ class CreateAdmins < ActiveRecord::Migration[5.1]
       t.string :password
       t.string :title
       t.date :date
-      t.string :location
       t.time :time
-      t.string :programme
+      t.string :location
+      t.integer :num_table
+      t.integer :num_seat
 
       t.timestamps
     end
