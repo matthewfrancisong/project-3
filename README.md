@@ -8,7 +8,7 @@
 ![trello_user_story](/project-log/trello_user_story.png)
 
 ### Entity Relationship Diagram
-![erd](/project-log/erd.png)
+![erd](/project-log/new_erd.jpeg)
 
 ### Wireframes
 #### Main template
