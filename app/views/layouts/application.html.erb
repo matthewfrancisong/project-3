@@ -10,9 +10,15 @@
 
   <body>
     <ul id="slide-out" class="side-nav fixed">
+      <% unless admin_signed_in? %>
       <li><a href="#!" id="navOne" class="brand-logo hoverable waves-effect"><i class="material-icons medium pulse">home</i></a></li>
+      <li><%= link_to "login", new_admin_session_path %></li>
         <li><a href="#!" id="navOne" class="brand-logo hoverable waves-effect"><i class="material-icons medium">border_color</i></a></li>
+        <li><%= link_to "register", new_admin_registration_path %></li>
         <li><a href="#!" id="navOne" class="brand-logo hoverable waves-effect"><i class="material-icons medium">assignment_ind</i></a></li>
+        <% else %>
+        <li><%= link_to "logout", destroy_admin_session_path, method: :delete %></li>
+        <% end %>
       </ul>
 
 
