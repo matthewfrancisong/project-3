@@ -1,6 +1,7 @@
 class AddDeviseToAdmins < ActiveRecord::Migration[5.1]
   def self.up
     create_table :admins do |t|
+      t.string :name
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -33,6 +34,14 @@ class AddDeviseToAdmins < ActiveRecord::Migration[5.1]
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
+
+      t.string :title
+      t.string :venue
+      t.date :date
+      t.time :time
+      t.integer :num_tables
+      t.integer :num_seats
+
     end
 
     add_index :admins, :email,                unique: true
@@ -41,9 +50,9 @@ class AddDeviseToAdmins < ActiveRecord::Migration[5.1]
     # add_index :admins, :unlock_token,         unique: true
   end
 
-  def self.down
-    # By default, we don't want to make any assumption about how to roll back a migration when your
-    # model already existed. Please edit below which fields you would like to remove in this migration.
-    raise ActiveRecord::IrreversibleMigration
-  end
+  # def self.down
+  #   # By default, we don't want to make any assumption about how to roll back a migration when your
+  #   # model already existed. Please edit below which fields you would like to remove in this migration.
+  #   raise ActiveRecord::IrreversibleMigration
+  # end
 end
