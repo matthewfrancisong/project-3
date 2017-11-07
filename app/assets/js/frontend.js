@@ -1,5 +1,5 @@
 $(function () {
-  
-$('.parallax').parallax();
 
+$('.parallax').parallax();
+  console.log('branch test')
 })
