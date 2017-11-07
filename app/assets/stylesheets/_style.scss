@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+$font-title: 'Indie Flower', cursive;
+$nav-bar: #E0FAFA;
+
 header, main, footer {
+
      padding-left: 300px;
    }
 @media only screen and (max-width : 992px) {
@@ -6,11 +12,6 @@ header, main, footer {
        padding-left: 0;
      }
    }
-
-h1 {
-    font-style: italic;
-    text-align: center;
-}
 
 p {
   font-size: 40px;
@@ -40,7 +41,11 @@ div.title{
 h1.title{
   font-size: 100px;
   font-weight: 500;
-  font-family: cursive;
+  font-family: $font-title;
+  text-align: center;
+}
+nav{
+  background-color: $nav-bar;
 }
 
 #homeOne{
@@ -51,11 +56,15 @@ h1.title{
   width: 11%;
 }
 
+#slide-out {
+  background-color: $nav-bar;
+}
 #navOne {
   padding: 25px 35%;
   margin: 60% 0px;
   height: 100px;
   width: 100%;
+  background-color: $nav-bar;
 }
 
 #navTwo {
@@ -63,4 +72,5 @@ h1.title{
   margin: 150% 0px;
   height: 100px;
   width: 100%;
+  background-color: $nav-bar;
 }
