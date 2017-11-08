@@ -4,14 +4,14 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout',
     sign_up: 'register',
-    
+
 
   }
   get 'table/index'
-
   root 'main#index'
 
   get 'main/index'
+
 
   resources :guests
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
