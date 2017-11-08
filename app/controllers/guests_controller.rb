@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_admin!
-  
+
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
   end
@@ -15,8 +15,17 @@ class GuestsController < ApplicationController
     @new_guest = Guest.new
   end
 
-  def update
+  def edit
+    @guest =Guest.find(params[:id])
+  end
 
+  def update
+    @guest =Guest.find(params[:id])
+    if @guest.update(post_params)
+      redirect_to @guest
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -25,6 +34,6 @@ class GuestsController < ApplicationController
 
   private
   def post_params
-  params.require(:guest).permit(:name)
+  params.require(:guest).permit(:name, :email)
   end
 end
