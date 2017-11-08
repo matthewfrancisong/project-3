@@ -1,10 +1,30 @@
 <div class = container>
 <h1>Guests List</h1>
-<ul>
-  <% @guests.each do |guest| %>
-  <li><%= guest.name %> - <%= guest.email %></li>
-  <% end %>
-</ul>
+<table class="highlight">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">RSVP</th>
+      <th scope="col">Check-in</th>
+      <th scope="col">Table no.</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @guests.each do |guest| %>
+      <td><%= guest.name %></td>
+      <td><%= guest.email %></td>
+      <td><%= guest.RSVP %></td>
+      <td><%= guest.check_in %></td>
+      <td><%= guest.table_num %></td>
+      <td><%= link_to "edit", guests_path %></td>
+    </tr>
 
+  <% end %>
+</tbody>
+
+</table>
 
 </div>
