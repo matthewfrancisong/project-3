@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     sign_out: 'logout',
     sign_up: 'register',
 
-
   }
+  # controllers: { registrations: 'registrations' }
+
   get 'table/index'
   root 'main#index'
 

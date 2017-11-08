@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_admin!
+  
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
   end
