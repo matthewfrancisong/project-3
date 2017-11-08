@@ -1,0 +1,12 @@
+<div class = container>
+
+<h1>Add Guest</h1>
+
+<%= form_for @new_guest do |f| %>
+  <%= f.label("Name:")%>
+  <%= f.text_field :name %>
+  <%= f.label("Email:")%>
+  <%= f.text_field :email %>
+  <%= f.submit("Add New Guest", class: 'btn') %>
+<% end %>
+</div>

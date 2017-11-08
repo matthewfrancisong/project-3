@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Spirax');
 
-$font-title: 'Indie Flower', cursive;
-$nav-bar: #E0FAFA;
+$font-title: 'Spirax', cursive;
+$nav-bar: #D0F6ED;
 
 header, main, footer {
 
-     padding-left: 300px;
+     padding-left: 11%;
+     padding-right: 6%;
    }
 @media only screen and (max-width : 992px) {
      header, main, footer {
@@ -23,7 +24,7 @@ body {
 }
 main {
     flex: 1 0 auto;
-    width: 85%;
+    width: 95%;
 }
 
 div.wrapper{

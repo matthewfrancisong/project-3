@@ -4,4 +4,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          #take out those not needed or wanted.
+  has_many :guests
 end
