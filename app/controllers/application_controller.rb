@@ -8,4 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :title, :venue, :date, :time, :num_tables, :num_seats])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :title, :venue, :date, :time, :num_tables, :num_seats])
   end
+  def index
+    @guests = Guest.where(admin_id: current_admin[:id])
+  end
 end

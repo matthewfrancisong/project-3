@@ -15,8 +15,9 @@ header, main, footer {
    }
 
 p {
-  font-size: 40px;
+  font-size: 30px;
 }
+
 body {
     display: flex;
     min-height: 100vh;
@@ -26,17 +27,19 @@ main {
     flex: 1 0 auto;
     width: 95%;
 }
-
+div.container {
+  margin: 0 auto;
+}
 div.wrapper{
 	float:left; /* important */
 	position:relative; /* important(so we can absolutely position the description div */
 }
 div.title{
 	position:absolute; /* absolute position (so we can position it where we want)*/
-	bottom:50%; /* position will be on bottom */
+	bottom:0%; /* position will be on bottom */
 	width:100%;
-	color:black;
-	opacity:0.6; /* transparency */
+	color:#F5C0B6;
+	opacity:0.9; /* transparency */
 	filter:alpha(opacity=60); /* IE transparency */
 }
 h1.title{
@@ -62,7 +65,7 @@ nav{
 }
 #navOne {
   padding: 25px 35%;
-  margin: 60% 0px;
+  margin: 20% 0px;
   height: 100px;
   width: 100%;
   background-color: $nav-bar;

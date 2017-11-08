@@ -12,18 +12,20 @@
   <body>
     <ul id="slide-out" class="side-nav fixed">
       <% unless admin_signed_in? %>
-        <li><%= link_to main_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">home</i><% end %></li>
-        <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">assignment_ind</i><% end %></li>
-        <li><%= link_to new_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">border_color</i><% end %></li>
+          <li><%= link_to main_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">home</i><% end %></li>
+          <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">assignment_ind</i><% end %></li>
+          <li><%= link_to new_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">border_color</i><% end %></li>
         <% else %>
-        <li><%= link_to main_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">home</i><% end %></li>
-        <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium pulse">exit_to_app</i><% end %></li>
-        <li><%= link_to table_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">event_seat</i><% end %></li>
+          <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">portrait</i><% end %></li>
+          <li><%= link_to main_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">home</i><% end %></li>
+          <li><%= link_to table_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">event_seat</i><% end %></li>
+          <li><%= link_to new_guest_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">group_add</i><% end %></li>
+          <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i><% end %></li>
+          <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium pulse">exit_to_app</i><% end %></li>
         <% end %>
       </ul>
     <% if admin_signed_in? %>
       <ul id="slide-out" class="side-nav fixed right-aligned">
-        <li><%= link_to table_index_path, id: "navTwo", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">event_seat</i><% end %></li>
       </ul>
     <% end %>
       <p class="notice"><%= notice %></p>
@@ -34,26 +36,10 @@
   <%= yield %>
     </main>
     <footer class="page-footer N/A transparent">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="black-text">Footer Content</h5>
-              <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="black-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="black-text text-lighten-3" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
         <div class="footer-copyright black-text text-lighten-4">
           <div class="container">
-          © 2014 Copyright Text
+          © 2017 Copyright Text, property of MRS.
           </div>
         </div>
       </footer>
