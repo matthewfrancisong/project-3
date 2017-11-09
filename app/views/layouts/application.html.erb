@@ -20,7 +20,7 @@
           <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium pulse">home</i><% end %></li>
           <li><%= link_to table_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">event_seat</i><% end %></li>
           <li><%= link_to new_guest_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">group_add</i><% end %></li>
-          <li><%= link_to guests_path id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i><% end %></li>
+          <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i><% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium pulse">exit_to_app</i><% end %></li>
         <% end %>
       </ul>
