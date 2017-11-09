@@ -22,7 +22,7 @@ class GuestsController < ApplicationController
   def update
     @guest =Guest.find(params[:id])
     if @guest.update(post_params)
-      redirect_to admin_guest_path
+      redirect_to guests_path
     else
       render 'edit'
     end
