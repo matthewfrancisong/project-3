@@ -8,14 +8,12 @@ Rails.application.routes.draw do
   }
   # , controllers: { registrations: 'registrations' }
 
+  get 'email/index'
   get 'table/index'
   root 'main#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # root to:''
 
-  resources :admins do
-    resources :guests
-  end
+  resources :admins
+  resources :guests
 
 end

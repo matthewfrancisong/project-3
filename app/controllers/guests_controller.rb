@@ -8,7 +8,7 @@ class GuestsController < ApplicationController
 
   def create
     current_admin.guests.create(post_params)
-    redirect_to new_admin_guest_path
+    redirect_to new_guest_path
   end
 
   def new
@@ -22,7 +22,7 @@ class GuestsController < ApplicationController
   def update
     @guest =Guest.find(params[:id])
     if @guest.update(post_params)
-      redirect_to @guest
+      redirect_to guests_path
     else
       render 'edit'
     end
