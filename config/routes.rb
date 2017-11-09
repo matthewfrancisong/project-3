@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   }
   # , controllers: { registrations: 'registrations' }
 
+  get 'email/index'
   get 'table/index'
   root 'main#index'
+
 
   resources :admins
   resources :guests

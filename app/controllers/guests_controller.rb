@@ -8,7 +8,7 @@ class GuestsController < ApplicationController
 
   def create
     current_admin.guests.create(post_params)
-    redirect_to new_admin_guest_path
+    redirect_to new_guest_path
   end
 
   def new
