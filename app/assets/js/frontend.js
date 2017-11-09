@@ -1,6 +1,6 @@
 $(function () {
 
- $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
     // Show sideNav
     $('.button-collapse').sideNav('show');
     // Hide sideNav
