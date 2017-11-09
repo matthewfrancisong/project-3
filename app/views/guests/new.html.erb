@@ -2,7 +2,7 @@
 
 <h1>Add Guests</h1>
 
-<%= form_for @new_guest do |f| %>
+<%= form_for [current_admin, @new_guest] do |f| %>
   <%= f.label("Name:")%>
   <%= f.text_field :name %>
   <%= f.label("Email:")%>
