@@ -24,7 +24,7 @@ class GuestsController < ApplicationController
     if @guest.update(post_params)
       redirect_to guests_path
     else
-      render 'edit'
+      redirect_back fallback_location: root_path
     end
   end
 
@@ -34,6 +34,6 @@ class GuestsController < ApplicationController
 
   private
   def post_params
-  params.require(:guest).permit(:name, :email)
+  params.require(:guest).permit(:name, :email, :RSVP, :table_num)
   end
 end

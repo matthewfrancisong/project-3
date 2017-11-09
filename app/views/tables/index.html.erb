@@ -1,5 +1,4 @@
 <div class = container>
-
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
       <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
       <% @guests.each do |guest| %>
@@ -9,8 +8,9 @@
              <td><%= guest.name %>
                <ul id='dropdown1' class=''>
                 <li>
-                 <%= form_for guest do |f| %>
+                 <%= form_for guest, url: tables_path do |f| %>
                  <%= f.text_field :table_num %>
+                 <%= hidden_field_tag 'table_guest_id', guest.id %>
                  <%= f.submit("Update", class: 'btn') %>
                  <% end %>
                 </li>

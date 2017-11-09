@@ -1,5 +1,4 @@
-$(function () {
-
+$(document).on("turbolinks:load", function() {
   $(".button-collapse").sideNav();
     // Show sideNav
     $('.button-collapse').sideNav('show');
@@ -28,5 +27,5 @@ $(function () {
           stopPropagation: false // Stops event propagation
         }
   );
-
+   $('select').material_select();
 })

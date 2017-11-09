@@ -8,6 +8,7 @@ end
 
 gem 'pry'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'devise'
 gem 'materialize-sass'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
