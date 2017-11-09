@@ -19,7 +19,7 @@
       <td><%= guest.RSVP %></td>
       <td><%= guest.check_in %></td>
       <td><%= guest.table_num %></td>
-      <td><%= link_to "edit", guests_path %></td>
+      <td><%= link_to "edit", edit_guest_path(guest) %></td>
     </tr>
 
   <% end %>
