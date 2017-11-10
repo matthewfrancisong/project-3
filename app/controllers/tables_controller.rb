@@ -21,8 +21,12 @@ class TablesController < ApplicationController
       else
         g.table_num = nil
         @guest_list.delete g
-        g.save
       end
+        #checking for table_num
+      if g.table_num != nil
+        @guest_list.delete g
+      end
+        g.save
     end
   end
 

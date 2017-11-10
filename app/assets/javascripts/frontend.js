@@ -28,6 +28,10 @@ $(document).on("turbolinks:load", function() {
   );
   $('select').material_select();
 
+  // $('.addlist').click(function() {
+  //  $('.addform').hide();//Form shows on button click
+  //  });
+
 
 
 })

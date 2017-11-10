@@ -6,7 +6,7 @@
         <% @guest_list.each do |guest| %>
          <tbody>
              <td><%= guest.name %>
-                 <%= form_for guest, url: tables_path do |f| %>
+                 <%= form_for(guest, :html => {:class => 'addform'}, url: tables_path) do |f| %>
                  <%= f.text_field :table_num %>
                  <%= hidden_field_tag 'table_guest_id', guest.id %>
                  <%= f.submit("Update", class: 'btn addlist') %>
@@ -21,7 +21,7 @@
 <h1> Tables & Seatings</h1>
 
     <div class="row">
-      <% @tables_list.each_with_index do |t, index| %>
+      <% @tables_list.each_with_index do |table, index| %>
       <div class="col s4">
         <table class="highlight">
           <thead>
@@ -30,9 +30,9 @@
             </tr>
           </thead>
           <tbody>
-            <% t.each do |a| %>
+            <% table.each do |t| %>
             <tr>
-                <td><%= a %></td>
+                <td><%= t %></td>
             </tr>
             <% end %>
           </tbody>
