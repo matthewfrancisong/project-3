@@ -11,4 +11,7 @@
   <%= f.select :RSVP, ([["Yes",true],["No",false]]) %>
   <%= f.submit("Update", class: 'btn') %>
 <% end %>
+
+<p><%= button_to "Delete Guest", guest_path(@guest), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn red" %></p>
+
 </div>
