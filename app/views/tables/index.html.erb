@@ -26,20 +26,22 @@
 <h1> Tables & Seatings</h1>
 
     <div class="row">
-      <% @admin.num_tables.times do %>
+    <% (1..@admin.num_tables).each do |t| %>
       <div class="col s4">
         <table class="highlight">
-            <thead>
+          <thead>
+            <tr>
+             <th>TABLE <%= t %> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @guests.each do |guest| %>
               <tr>
-                <th>TABLE <%= (@starttable) %></th>
+                <td><%= guest.table_num %></td>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+            <% end %>
+          </tbody>
+        </table>
       </div>
       <% end %>
     </div>
