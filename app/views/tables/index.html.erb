@@ -1,25 +1,20 @@
 <div class = container>
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
-      <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
-      <% @guests.each do |guest| %>
+    <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
+
       <table class = "bordered">
+        <% @guest_list.each do |guest| %>
          <tbody>
-           <tr>
              <td><%= guest.name %>
-               <ul id='dropdown1' class=''>
-                <li>
                  <%= form_for guest, url: tables_path do |f| %>
                  <%= f.text_field :table_num %>
                  <%= hidden_field_tag 'table_guest_id', guest.id %>
-                 <%= f.submit("Update", class: 'btn') %>
+                 <%= f.submit("Update", class: 'btn addlist') %>
                  <% end %>
-                </li>
-               </ul>
+                 <% end %>
              </td>
-           </tr>
          </tbody>
        </table>
-      <% end %>
     </ul>
 
 
