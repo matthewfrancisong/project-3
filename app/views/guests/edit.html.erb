@@ -8,7 +8,7 @@
   <%= f.label("Email:")%>
   <%= f.text_field :email %>
   <%= f.label("RSVP:")%>
-  <%= f.select :RSVP, ([["Yes",true],["No",false]]) %>
+  <%= f.select :RSVP, (['',["Yes",true],["No",false]]) %>
   <%= f.submit("Update", class: 'btn') %>
 <% end %>
 
