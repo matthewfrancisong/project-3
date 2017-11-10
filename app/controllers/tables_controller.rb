@@ -3,8 +3,22 @@ class TablesController < ApplicationController
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
     @admin = Admin.find(current_admin[:id])
+    #creating table for guest
 
+    @tables_list = []
+    @admin.num_tables.times do
+      @tables_list << []
+    end
+    p @tables_list
+    @guests.each do |g|
+      if g.table_num
+        @tables_list[g.table_num-1] << g.name
+      end
+    end
   end
+
+
+
 
   def new
     @guest = Guest.new

@@ -26,24 +26,24 @@
 <h1> Tables & Seatings</h1>
 
     <div class="row">
-    <% (1..@admin.num_tables).each do |t| %>
+      <% @tables_list.each_with_index do |t, index| %>
       <div class="col s4">
         <table class="highlight">
           <thead>
             <tr>
-             <th>TABLE <%= t %> </th>
+             <th>TABLE <%= index+1 %> </th>
             </tr>
           </thead>
           <tbody>
-            <% @guests.each do |guest| %>
-              <tr>
-                <td><%= guest.table_num %></td>
-              </tr>
+            <% t.each do |a| %>
+            <tr>
+                <td><%= a %></td>
+            </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-      <% end %>
+        <% end %>
     </div>
 
-  </div>
+</div>
