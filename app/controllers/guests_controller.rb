@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @guests = Guest.where(admin_id: current_admin[:id])
+    @guests = Guest.where(admin_id: current_admin[:id]).order(:name)
   end
 
   def create
@@ -30,6 +30,7 @@ class GuestsController < ApplicationController
 
   def destroy
     Guest.destroy(params[:id])
+    redirect_to guests_path
   end
 
   private

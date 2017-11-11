@@ -1,47 +1,44 @@
 <div class = container>
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
-      <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
-      <% @guests.each do |guest| %>
+    <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
+
       <table class = "bordered">
+        <% @guest_list.each do |guest| %>
          <tbody>
-           <tr>
              <td><%= guest.name %>
-               <ul id='dropdown1' class=''>
-                <li>
-                 <%= form_for guest, url: tables_path do |f| %>
+                 <%= form_for(guest, :html => {:class => 'addform'}, url: tables_path) do |f| %>
                  <%= f.text_field :table_num %>
                  <%= hidden_field_tag 'table_guest_id', guest.id %>
-                 <%= f.submit("Update", class: 'btn') %>
+                 <%= f.submit("Update", class: 'btn addlist') %>
                  <% end %>
-                </li>
-               </ul>
+                 <% end %>
              </td>
-           </tr>
          </tbody>
        </table>
-      <% end %>
     </ul>
 
 
 <h1> Tables & Seatings</h1>
 
     <div class="row">
-      <% @admin.num_tables.times do %>
+      <% @tables_list.each_with_index do |table, index| %>
       <div class="col s4">
         <table class="highlight">
-            <thead>
-              <tr>
-                <th>TABLE <%= (@starttable) %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <thead>
+            <tr>
+             <th>TABLE <%= index+1 %> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% table.each do |t| %>
+            <tr>
+                <td><%= t %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-      <% end %>
+        <% end %>
     </div>
 
-  </div>
+</div>
