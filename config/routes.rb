@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # , controllers: { registrations: 'registrations' }
 
   get 'email/index'
+  post '/email/index', to: 'email#create'
   root 'main#index'
 
 
