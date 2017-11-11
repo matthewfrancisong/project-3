@@ -1,4 +1,6 @@
 class TablesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_admin!
 
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
@@ -49,6 +51,7 @@ class TablesController < ApplicationController
   private
 
   def post_params
-  params.require(:guest).permit(:table_num)
+  params.require(:guest).permit(:table_guest_id, :table_num)
+
   end
 end

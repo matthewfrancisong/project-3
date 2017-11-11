@@ -1,11 +1,14 @@
-<h3>Customise your E-mail message to send to all your guest</h3><br>
+<div class = container>
+<h3>Customize your E-mail message to send to all your guest</h3><br>
 
 <h5>E-mail Subject-line: </h5>
-  <h5><em>You're Invited! <%= @admin.title  %>  Wedding on <%=@admin.date.to_formatted_s(:long) %>!</em></h5>
+<h5><em>You're Invited! <%= @admin.title  %>  Wedding on <%=@admin.date.to_formatted_s(:long) %>!</em></h5>
 
 
 
 <%= form_tag(email_index_path, method: :post) %>
 <%= label_tag 'message'  %>
 <%= text_area_tag 'message' %>
-<%= submit_tag "Submit" %>
+<%= submit_tag("Submit", class: 'btn') %>
+
+</div>

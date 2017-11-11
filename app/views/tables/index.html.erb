@@ -38,12 +38,14 @@
             <% table.each do |t| %>
             <tr>
                 <td>
+                   <div class="chip">
                   <%= t %>
-                  <%= form_for(@guest, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
-                  <%= f.text_field :table_num, class: 'form-control hidden', :value => nil%>
+                  <%= form_tag(tables_path, method: :patch) %>
+                  <%= text_field_tag(:type => 'table_num', class: 'form-control hidden', :value => nil)%>
                   <%= hidden_field_tag 'table_guest_id', @guest.id %>
-                  <%= f.submit("remove", class: 'btn removelist') %>
-                  <% end %>
+                  <%= submit_tag("remove", class: 'btn removelist') %>
+  
+                </div>
                 </td>
             </tr>
 
@@ -58,14 +60,14 @@
     </div>
 
     <div>
-      <% @guests.each do |guest| %>
+      <!-- <% @guests.each do |guest| %>
       <%= form_for(guest, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
       <%= guest.name %>
       <%= f.text_field :table_num, class: 'form-control hidden', :value => nil%>
       <%= hidden_field_tag 'table_guest_id', guest.id %>
       <%= f.submit("remove", class: 'btn removelist') %>
       <% end %>
-      <% end %>
+      <% end %> -->
     </div>
 
 
