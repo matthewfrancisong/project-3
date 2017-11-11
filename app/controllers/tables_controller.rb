@@ -5,14 +5,15 @@ class TablesController < ApplicationController
     @admin = Admin.find(current_admin[:id])
     #removing table num from table list
 
-
     #creating table for guest
+
     @guest_list = []
     @tables_list = []
     @admin.num_tables.times do
       @tables_list << []
     end
     @guests.each do |g|
+      @guest = g
       if g.table_num
         @tables_list[g.table_num-1] << g.name
       end

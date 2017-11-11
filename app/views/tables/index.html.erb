@@ -21,29 +21,52 @@
 <h1> Tables & Seatings</h1>
 
     <div class="row">
+
       <% @tables_list.each_with_index do |table, index| %>
       <div class="col s4">
+
         <table class="highlight">
+
           <thead>
+
             <tr>
-             <th>TABLE <%= index+1 %> </th>
+             <th>TABLE <%= index+1 %></th>
+
             </tr>
           </thead>
           <tbody>
             <% table.each do |t| %>
-
             <tr>
                 <td>
                   <%= t %>
-                  <%= index%>
+                  <%= form_for(@guest, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
+                  <%= f.text_field :table_num, class: 'form-control hidden', :value => nil%>
+                  <%= hidden_field_tag 'table_guest_id', @guest.id %>
+                  <%= f.submit("remove", class: 'btn removelist') %>
+                  <% end %>
                 </td>
             </tr>
-            <% end %>
 
+              <% end %>
           </tbody>
+
         </table>
+
       </div>
         <% end %>
+
     </div>
+
+    <div>
+      <% @guests.each do |guest| %>
+      <%= form_for(guest, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
+      <%= guest.name %>
+      <%= f.text_field :table_num, class: 'form-control hidden', :value => nil%>
+      <%= hidden_field_tag 'table_guest_id', guest.id %>
+      <%= f.submit("remove", class: 'btn removelist') %>
+      <% end %>
+      <% end %>
+    </div>
+
 
 </div>

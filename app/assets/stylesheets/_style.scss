@@ -36,6 +36,10 @@ h1.title{
   font-family: $font-title;
   text-align: center;
 }
+.hidden{
+  display: none;
+}
+
 #listheader{
   background-color: $nav-bar;
 }
