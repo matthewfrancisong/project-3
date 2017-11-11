@@ -3,6 +3,7 @@ class TablesController < ApplicationController
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
     @admin = Admin.find(current_admin[:id])
+    #removing table num from table list
 
 
     #creating table for guest
@@ -45,6 +46,7 @@ class TablesController < ApplicationController
   end
 
   private
+
   def post_params
   params.require(:guest).permit(:table_num)
   end

@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   get '/tables', to: 'tables#index'
   patch '/tables', to: 'tables#update'
+  post '/tables', to: 'tables#index'
+
 
 end
