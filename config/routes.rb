@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   patch '/tables', to: 'tables#update'
   post '/tables', to: 'tables#update'
 
+  # for guests to reply on RSVP status
+  resources :rsvps, except: [:destroy, :patch]
+
 end
