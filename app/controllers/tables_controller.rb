@@ -11,13 +11,16 @@ class TablesController < ApplicationController
 
     @guest_list = []
     @tables_list = []
+    @guestid_list = []
     @admin.num_tables.times do
       @tables_list << []
+      @guestid_list << []
     end
     @guests.each do |g|
       @guest = g
       if g.table_num
         @tables_list[g.table_num-1] << g.name
+        @guestid_list[g.table_num-1] << g.id
       end
         #checking for RSVP
       if g.RSVP != false
@@ -29,6 +32,8 @@ class TablesController < ApplicationController
         #checking for table_num
       if g.table_num != nil
         @guest_list.delete g
+      else
+        @tables_list.delete g
       end
         g.save
     end
@@ -43,7 +48,6 @@ class TablesController < ApplicationController
   end
 
   def update
-    # render json:params
     @guest = Guest.find(params[:table_guest_id])
     @guest.update(post_params)
     redirect_to tables_path
@@ -51,6 +55,6 @@ class TablesController < ApplicationController
 
   private
   def post_params
-    params.require(:guest).permit(:table_num)
+  params.require(:guest).permit(:table_num)
   end
 end

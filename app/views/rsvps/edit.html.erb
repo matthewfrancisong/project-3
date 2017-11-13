@@ -2,21 +2,9 @@
 
 <h1>Respond to invitation</h1>
 
-<!-- <%= form_for @rsvp do |f| %>
+<%= form_for(@rsvp, url: rsvp_path(@rsvp), html: {method: "put"}) do |f| %>
   <%= f.label("RSVP:")%>
-
   <%= f.select :RSVP, ([["Yes",true],["No",false]]) %>
   <%= f.submit("Send response", class: 'btn') %>
 <% end %>
-</div> -->
-      <!-- <%= form_tag(rsvp_path, method: :put) %>
-      <%= select_tag(:RSVP, options_for_select([["Yes",true],["No",false]])) %>
-      <%= hidden_field_tag 'rsvp_guest_id', @rsvp.id %>
-      <%= submit_tag("Respond", class: 'btn') %>
- -->
-
-      <%= form_for@rsvp, url: rsvp_path do |f| %>
-        <%= f.label("RSVP:")%>
-        <%= f.select :RSVP, (['',["Yes",true],["No",false]]) %>
-        <%= f.submit("Update", class: 'btn') %>
-      <% end %>
+</div>

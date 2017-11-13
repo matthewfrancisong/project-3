@@ -23,7 +23,7 @@ class GuestsController < ApplicationController
     # render json: params
     @guest =Guest.find(params[:id])
     if @guest.update(post_params)
-      # redirect_to guests_path
+      redirect_to guests_path
     else
       redirect_back fallback_location: root_path
     end

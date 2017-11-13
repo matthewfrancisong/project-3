@@ -1,6 +1,6 @@
 <div class = container>
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
-    <li id ="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
+    <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
 
       <table class = "bordered">
         <% @guest_list.each do |guest| %>
@@ -26,7 +26,7 @@
 
     <div class="row">
 
-      <% @tables_list.each_with_index do |table, index| %>
+      <% @tables_list.zip(@guestid_list).each_with_index do |table, index| %>
       <div class="col s4">
 
         <table class="highlight">
@@ -35,25 +35,23 @@
 
             <tr>
              <th>TABLE <%= index+1 %></th>
-
             </tr>
           </thead>
           <tbody>
-            <% table.each do |t| %>
             <tr>
                 <td>
+                  <% if table[0].length != 0 %>
                    <div class="chip">
-                  <%= t %>
+                  <%= table[0][0] %>
                   <%= form_tag(tables_path, method: :patch) %>
-                  <%= text_field_tag(:type => 'table_num', class: 'form-control hidden', :value => nil)%>
-                  <%= hidden_field_tag 'table_guest_id', @guest.id %>
+                  <%= hidden_field_tag 'guest[table_num]', nil %>
+                  <%= hidden_field_tag 'table_guest_id', table[1][0] %>
                   <%= submit_tag("remove", class: 'btn removelist') %>
-
+                  <% end  %>
                 </div>
                 </td>
             </tr>
 
-              <% end %>
           </tbody>
 
         </table>
@@ -62,7 +60,6 @@
         <% end %>
 
     </div>
-
     <!-- <div>
       <% @guests.each do |guest| %>
       <%= form_for(guest, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
@@ -73,6 +70,10 @@
       <% end %>
       <% end %>
     </div> -->
+
+  <%= @tables_list %>
+  <br>
+  <%= @guestid_list %>
 
 
 </div>
