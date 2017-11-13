@@ -17,7 +17,6 @@ class TablesController < ApplicationController
       @guestid_list << []
     end
     @guests.each do |g|
-      @guest = g
       if g.table_num
         @tables_list[g.table_num-1] << g.name
         @guestid_list[g.table_num-1] << g.id
@@ -50,9 +49,11 @@ class TablesController < ApplicationController
   def update
     # render json: params
     @guest = Guest.find(params[:table_guest_id])
+    # render json: @guest
     @guest.update(post_params)
     redirect_to tables_path
   end
+
 
   private
 
