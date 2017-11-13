@@ -36,10 +36,24 @@ h1.title{
   font-family: $font-title;
   text-align: center;
 }
+
 .hidden{
   display: none;
 }
 
+#slide-out li i {
+  color: white;
+}
+
+
+.sideprofile{
+  font-size: 15px;
+  text-align: center;
+}
+#sideprofile{
+  font-size: 20px;
+  text-align: center;
+}
 #listheader{
   background-color: $nav-bar;
 }
@@ -52,24 +66,24 @@ h1.title{
   width: 100%;
 }
 
-#slide-out {
-  width: 11%;
-}
+
 #slide-out {
   background-color: $nav-bar;
+  width: 11%;
 }
 #navOne {
-  padding: 25px 35%;
-  margin: 5% 0px;
+  padding: 10px 35% 0 35%;
+  margin: 8% 1%;
   height: 100px;
   width: 100%;
   background-color: $nav-bar;
+  text-align: center;
+  color: white;
 }
 
 #navTwo {
-  padding: 25px 35%;
-  margin: 150% 0px;
-  height: 100px;
+  padding: 15% 15%;
+  margin: 5% 0px;
   width: 100%;
   background-color: $nav-bar;
 }
