@@ -6,9 +6,9 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">RSVP</th>
-      <th scope="col">Check-in</th>
       <th scope="col">Table no.</th>
-      <th scope="col"></th>
+      <th scope="col">Check-in</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -17,12 +17,19 @@
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
       <td><%= guest.RSVP %></td>
-      <td><%= guest.check_in %></td>
       <td><%= guest.table_num %></td>
+      <td>
+        <%= form_for(guest, url: guest_path(guest), html: {method: "put"}) do |f| %>
+          <%= f.select :check_in, ([[''],["Yes",true],["No",false]]),{}, onchange: "this.form.submit()" %>
+          <!-- <%= f.submit("Check in", class: 'btn') %> -->
+        <% end %>
+      </td>
       <td><%= link_to "edit", edit_guest_path(guest) %></td>
     </tr>
 
   <% end %>
+
+
 </tbody>
 
 </table>
