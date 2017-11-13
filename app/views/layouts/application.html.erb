@@ -25,11 +25,10 @@
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium pulse">exit_to_app</i><% end %></li>
         <% end %>
       </ul>
-    <% if admin_signed_in? %>
-      <ul id="slide-out" class="side-nav fixed right-aligned">
 
+      <ul id="slide-out" class="side-nav fixed right-aligned">
       </ul>
-    <% end %>
+  
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
