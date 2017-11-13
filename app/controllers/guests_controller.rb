@@ -20,7 +20,6 @@ class GuestsController < ApplicationController
   end
 
   def update
-    # render json: params
     @guest =Guest.find(params[:id])
     if @guest.update(post_params)
       redirect_to guests_path
@@ -36,6 +35,6 @@ class GuestsController < ApplicationController
 
   private
   def post_params
-  params.require(:guest).permit(:name, :email, :RSVP, :table_num)
+  params.require(:guest).permit(:name, :email, :RSVP, :table_num, :check_in)
   end
 end
