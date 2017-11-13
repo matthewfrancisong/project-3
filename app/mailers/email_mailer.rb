@@ -6,6 +6,6 @@ class EmailMailer < ApplicationMailer
       @message = message
       @admin = admin
       mail( :to => @guest.email,
-      :subject => @admin.title
+      :subject =>"You're Invited: #{@admin.title}")
     end
 end

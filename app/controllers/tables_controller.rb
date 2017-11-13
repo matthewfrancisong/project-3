@@ -47,7 +47,6 @@ class TablesController < ApplicationController
   end
 
   def update
-    # render json: params
     @guest = Guest.find(params[:table_guest_id])
     # render json: @guest
     @guest.update(post_params)
@@ -56,9 +55,7 @@ class TablesController < ApplicationController
 
 
   private
-
   def post_params
   params.require(:guest).permit(:table_num)
-
   end
 end

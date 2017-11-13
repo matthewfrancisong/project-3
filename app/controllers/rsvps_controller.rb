@@ -1,6 +1,7 @@
 class RsvpsController < ApplicationController
   def show
     @rsvp =Guest.find(params[:id])
+    redirect_to root_path
   end
 
   def edit
@@ -17,9 +18,11 @@ class RsvpsController < ApplicationController
 
   def update
     @rsvp =Guest.find(params[:id])
-    render json: params
-    end
-
+    @rsvp.update(post_params)
+    redirect_to rsvp_path
+    flash[:alert] = "Your response has been recorded. Thank you!"
+  end
+  
   private
   def post_params
   params.require(:guest).permit(:RSVP)

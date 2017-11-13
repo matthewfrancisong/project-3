@@ -20,6 +20,7 @@ class GuestsController < ApplicationController
   end
 
   def update
+    # render json: params
     @guest =Guest.find(params[:id])
     if @guest.update(post_params)
       redirect_to guests_path
