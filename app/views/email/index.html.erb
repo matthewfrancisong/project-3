@@ -8,7 +8,9 @@
 
 <%= form_tag(email_index_path, method: :post) %>
 <%= label_tag 'message'  %>
-<%= text_area_tag 'message' %>
+<%= text_area_tag 'message', nil,:placeholder => '“Dearest friend, I invite you and your family to
+my wedding with Rachel to be held on 16th May at Green Pastures Lawn from 10
+am. I would love your presence by my side on the auspicious occasion.” ...', class: 'text_area_size'%>
 <%= submit_tag("Submit", class: 'btn') %>
 
 </div>

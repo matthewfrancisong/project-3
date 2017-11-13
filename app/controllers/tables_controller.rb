@@ -43,15 +43,14 @@ class TablesController < ApplicationController
   end
 
   def update
+    # render json:params
     @guest = Guest.find(params[:table_guest_id])
     @guest.update(post_params)
     redirect_to tables_path
   end
 
   private
-
   def post_params
-  params.require(:guest).permit(:table_guest_id, :table_num)
-
+    params.require(:guest).permit(:table_num)
   end
 end

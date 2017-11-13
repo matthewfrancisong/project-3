@@ -17,7 +17,7 @@ class RsvpsController < ApplicationController
 
   def update
     @rsvp =Guest.find(params[:id])
-    render json: params
+    render json: post_params
     end
 
   private
