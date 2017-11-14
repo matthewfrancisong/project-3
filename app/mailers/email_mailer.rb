@@ -1,11 +1,15 @@
 class EmailMailer < ApplicationMailer
-  default :from => 'matthewfoys@gmail.com'
+  # default :from => admin.email
 
     def send_all_guest_email(guest, message, admin)
+
+      @admin = admin
       @guest = guest
       @message = message
-      @admin = admin
-      mail( :to => @guest.email,
-      :subject =>"You're Invited: #{@admin.title}")
+      mail(
+        from: @admin.email,
+        to: @guest.email,
+        subject: "You're Invited: #{@admin.title}"
+      )
     end
 end
