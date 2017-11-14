@@ -5,8 +5,11 @@
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -18,7 +21,6 @@
         <% else %>
           <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
           <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>Home<% end %></li>
-          <li><%= link_to tables_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">event_seat</i>Seatings<% end %></li>
           <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i>Guestlist<% end %></li>
           <li><%= link_to email_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">mail</i>Send Email<% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium">exit_to_app</i>Log Out<% end %></li>
@@ -45,6 +47,8 @@
           <span class="sideprofile black-text title">venue will be at</span>
             <br>
           <span class="sideprofile black-text venue" style="font-weight: bold;"><%= current_admin.venue %></span>
+
+          <%= pie_chart @response %>
         </div>
     <% end %>
       </ul>

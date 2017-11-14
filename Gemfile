@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'chartkick'
 gem 'figaro'
 gem 'pry'
 gem 'jquery-rails'
@@ -13,6 +13,7 @@ gem 'devise'
 gem 'materialize-sass'
 gem 'nokogiri'
 gem 'rest-client'
+gem 'gon'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
