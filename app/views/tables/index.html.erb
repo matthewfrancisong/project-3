@@ -1,56 +1,47 @@
 <div class = container>
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
     <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
-
       <table class = "bordered">
-        <% @guest_list.each do |guest| %>
-         <tbody>
-             <td><%= guest.name %>
-                 <%= form_for(guest, :html => {:class => 'addform'}, url: tables_path) do |f| %>
-                 <%= f.text_field :table_num %>
-                 <%= hidden_field_tag 'table_guest_id', guest.id %>
-                 <%= f.submit("Update", class: 'btn addlist') %>
-                 <% end %>
-                 <% end %>
-             </td>
-         </tbody>
-       </table>
+        <% @guestlists.each do |g| %>
+          <tbody>
+            <td>
+              <%= g.name %>
+              <%= form_for(g, :html => {:class => 'addform'}, url: tables_path) do |f| %>
+              <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
+              <%= hidden_field_tag 'table_guest_id', g.id %>
+              <%= f.submit("Update", class: 'btn addlist') %>
+              <% end %>
+            </td>
+          </tbody>
+        <% end %>
+      </table>
     </ul>
 
 
-<h1> Tables & Seatings</h1>
-<a class="btn" onclick="Materialize.toast('Table is full', 1000)">Toast!</a>
-
+  <h1> Tables & Seatings</h1>
     <div class="row">
-        <!-- passing table list withguest name and id -->
-      <% @tables_list.zip(@guestid_list).each_with_index do |table, index| %>
+      <% @table_list.each do |key, value| %>
       <div class="col s4">
-
         <table class="highlight">
-
           <thead>
-
             <tr>
-             <th>TABLE <%= index+1 %></th>
+              Table : <%= key %>
             </tr>
           </thead>
           <tbody>
             <tr>
                 <td>
-                  <% if table[1].length != 0 %>
-                  <%table[0].zip(table[1]).each do |t| %>
-                  <%= t[0] %>
-                  <%= t[1] %>
-                  <%= button_to "Remove", tables_path, method: :patch, params: { "guest[table_num]": nil, table_guest_id: t[1]}, class: 'btn removelist' %>
+                  <% value.each do |v| %>
+                  <%= v.name %>
                   <% end %>
-                  <% end %>
+
+                  <br>
 
                 </td>
             </tr>
           </tbody>
         </table>
       </div>
-        <% end %>
+      <% end %>
     </div>
-
 </div>
