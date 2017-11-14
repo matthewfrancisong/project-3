@@ -4,6 +4,7 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.where(admin_id: current_admin[:id]).order(:name)
+    @response = Guest.where(admin_id: current_admin[:id]).group(:RSVP).count
   end
 
   def create
