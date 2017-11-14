@@ -15,4 +15,6 @@
 //= require jquery
 //= require materialize
 //= require materialize/extras/nouislider
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

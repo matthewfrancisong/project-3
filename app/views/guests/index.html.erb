@@ -1,5 +1,9 @@
 <div class = container>
 <h1>Guests List</h1>
+<p>Add guests before managing seating</p>
+<%= link_to new_guest_path, class: "btn" do %>Add Guest<% end %>
+<%= link_to tables_path, class: "btn" do %>Manage Seating<% end %>
+
 <table class="highlight">
   <thead>
     <tr>
