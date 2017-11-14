@@ -27,11 +27,15 @@ $(document).on("turbolinks:load", function() {
         }
   );
   $('select').material_select();
-
-  // $('.addlist').click(function() {
-  //  $('.addform').hide();//Form shows on button click
-  //  });
-
+  $('.slider').slider();
+  // Pause slider
+  $('.slider').slider('pause');
+  // Start slider
+  $('.slider').slider('start');
+  // Next slide
+  $('.slider').slider('next');
+  // Previous slide
+  $('.slider').slider('prev');
 
 
 })

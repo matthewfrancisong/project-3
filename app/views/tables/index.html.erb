@@ -11,7 +11,6 @@
                  <%= hidden_field_tag 'table_guest_id', guest.id %>
                  <%= f.submit("Update", class: 'btn addlist') %>
                  <% end %>
-              
                  <% end %>
              </td>
          </tbody>
@@ -20,6 +19,7 @@
 
 
 <h1> Tables & Seatings</h1>
+<a class="btn" onclick="Materialize.toast('Table is full', 1000)">Toast!</a>
 
     <div class="row">
         <!-- passing table list withguest name and id -->
@@ -44,6 +44,7 @@
                   <%= button_to "Remove", tables_path, method: :patch, params: { "guest[table_num]": nil, table_guest_id: t[1]}, class: 'btn removelist' %>
                   <% end %>
                   <% end %>
+
                 </td>
             </tr>
           </tbody>
