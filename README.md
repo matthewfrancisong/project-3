@@ -1,36 +1,37 @@
-# Project-3 (Matt, Ray & Shui)
-## Wedding Dinner table planner
+# aLifeTime
+##### Project Description
+Planning for a wedding can be a nightmare. WeddingTable to the rescue! This website is for couples who are planning for their wedding and need a solution to manage their guest-list. Our guest-list management tool helps you to build your guest-list, send invites and check who RSVP. Unlike existing wedding planner tools such as The Knot, we offer couples the service of planning their venue layout and assigning each individual guest to tables.
 
-### Project-Overview
-![trello_project_overview](/project-log/trello_project_overview.png)
+### Live Version
+ https://dashboard.heroku.com/apps/thawing-mountain-20143/logs
 
-### User-Stories
+### Home Page here
+
+### Guest List Manager here
+
+### User Stories
 ![trello_user_story](/project-log/trello_user_story.png)
 
-### Entity Relationship Diagram
-![erd](/project-log/new_erd.jpeg)
+### Entity Relationship Diagram (ERD)
+![erd](/project-log/erd.png)
+
 
 ### Wireframes
-#### Main template
-![template](/project-log/template.png)
+![tableplanner](/project-log/tableplanner.png)
 
-### Event details
-![eventdetails](/project-log/event.png)
+#### Guest-List Manager
+![eventdetails](/project-log/guestlistaye.png)
 
-### Add Guest
-![addguest](/project-log/addguest.png)
+#### Built with:
+Ruby v 2.4.2
+Rails v 5.1.4
+Postgresql Database
+Materialize
+Javascript
 
-### Guestlist
-![guestlist](/project-log/guestlist.png)
+#### Project by:
+Ray, Shui and Matthew
 
-### Edit Guest
-![editguest](/project-log/editguest.png)
-
-### Manage Tables
-![managetables](/project-log/managetables.png)
-
-### Menu (food)
-![menu](/project-log/menu.png)
 
 <!--
 
@@ -56,3 +57,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...       -->
+
+the vows
+the proposal
+Lifetime forever
+LoveLast
+WeddingProposal
+LoveTrain
+aLifeTime
+SweetDove
+LoveCarriage

@@ -1,18 +1,26 @@
 Rails.application.routes.draw do
 
+  # devise_for :admins, controllers: { registrations: 'registrations' }
   devise_for :admins, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
     sign_up: 'register',
-
   }
-  get 'table/index'
+  # , controllers: { registrations: 'registrations' }
 
+  get 'email/index'
+  post '/email/index', to: 'email#create'
   root 'main#index'
 
-  get 'main/index'
 
+  resources :admins
+  resources :guests
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # root to:''
+  get '/tables', to: 'tables#index'
+  patch '/tables', to: 'tables#update'
+  post '/tables', to: 'tables#update'
+
+  # for guests to reply on RSVP status
+  resources :rsvps, except: [:destroy, :patch]
+
 end

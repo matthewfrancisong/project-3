@@ -1,0 +1,56 @@
+<div class = container>
+    <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
+    <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
+
+      <table class = "bordered">
+        <% @guest_list.each do |guest| %>
+         <tbody>
+             <td><%= guest.name %>
+                 <%= form_for(guest, :html => {:class => 'addform'}, url: tables_path) do |f| %>
+                 <%= f.text_field :table_num %>
+                 <%= hidden_field_tag 'table_guest_id', guest.id %>
+                 <%= f.submit("Update", class: 'btn addlist') %>
+                 <% end %>
+                 <% end %>
+             </td>
+         </tbody>
+       </table>
+    </ul>
+
+
+<h1> Tables & Seatings</h1>
+<a class="btn" onclick="Materialize.toast('Table is full', 1000)">Toast!</a>
+
+    <div class="row">
+        <!-- passing table list withguest name and id -->
+      <% @tables_list.zip(@guestid_list).each_with_index do |table, index| %>
+      <div class="col s4">
+
+        <table class="highlight">
+
+          <thead>
+
+            <tr>
+             <th>TABLE <%= index+1 %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>
+                  <% if table[1].length != 0 %>
+                  <%table[0].zip(table[1]).each do |t| %>
+                  <%= t[0] %>
+                  <%= t[1] %>
+                  <%= button_to "Remove", tables_path, method: :patch, params: { "guest[table_num]": nil, table_guest_id: t[1]}, class: 'btn removelist' %>
+                  <% end %>
+                  <% end %>
+
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <% end %>
+    </div>
+
+</div>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h6>Dear!<%= @guest.name %></h6>
+    <p><%= @admin.name %></p>
+    <p><%= link_to "RSVP here!", "http:localhost:4000/rsvps/#{@guest.id}/edit" %></p>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<div class = container>
+
+<h1>Respond to invitation</h1>
+
+<%= form_for(@rsvp, url: rsvp_path(@rsvp), html: {method: "put"}) do |f| %>
+  <%= f.label("RSVP:")%>
+  <%= f.select :RSVP, ([["Yes",true],["No",false]]) %>
+  <%= f.submit("Send response", class: 'btn') %>
+<% end %>
+</div>

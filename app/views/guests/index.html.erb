@@ -1,0 +1,38 @@
+<div class = container>
+<h1>Guests List</h1>
+<%= link_to new_guest_path, class: "btn" do %>Add Guest<% end %>
+<table class="highlight">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">RSVP</th>
+      <th scope="col">Table no.</th>
+      <th scope="col">Check-in</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @guests.each do |guest| %>
+      <td><%= guest.name %></td>
+      <td><%= guest.email %></td>
+      <td><%= guest.RSVP %></td>
+      <td><%= guest.table_num %></td>
+      <td>
+        <%= form_for(guest, url: guest_path(guest), html: {method: "put"}) do |f| %>
+          <%= f.select :check_in, ([[''],["Yes",true],["No",false]]),{}, onchange: "this.form.submit()" %>
+          <!-- <%= f.submit("Check in", class: 'btn') %> -->
+        <% end %>
+      </td>
+      <td><%= link_to "edit", edit_guest_path(guest) %></td>
+    </tr>
+
+  <% end %>
+
+
+</tbody>
+
+</table>
+
+</div>

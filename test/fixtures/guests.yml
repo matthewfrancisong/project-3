@@ -3,15 +3,13 @@
 one:
   name: MyString
   email: MyString
+  table_num: 1
   RSVP: false
-  table: 1
   check_in: false
-  wedding: MyString
 
 two:
   name: MyString
   email: MyString
+  table_num: 1
   RSVP: false
-  table: 1
   check_in: false
-  wedding: MyString

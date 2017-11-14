@@ -1,0 +1,16 @@
+<div class = container>
+<h3>Customize your E-mail message to send to all your guest</h3><br>
+
+<h5>E-mail Subject-line: </h5>
+<h5><em>You're Invited! <%= @admin.title  %>  Wedding on <%=@admin.date.to_formatted_s(:long) %>!</em></h5>
+
+
+
+<%= form_tag(email_index_path, method: :post) %>
+<%= label_tag 'message'  %>
+<%= text_area_tag 'message', nil,:placeholder => '“Dearest friend, I invite you and your family to
+my wedding with Rachel to be held on 16th May at Green Pastures Lawn from 10
+am. I would love your presence by my side on the auspicious occasion.” ...', class: 'text_area_size'%>
+<%= submit_tag("Submit", class: 'btn') %>
+
+</div>
