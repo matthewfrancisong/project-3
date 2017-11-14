@@ -3,7 +3,7 @@
 Planning for a wedding can be a nightmare. WeddingTable to the rescue! This website is for couples who are planning for their wedding and need a solution to manage their guest-list. Our guest-list management tool helps you to build your guest-list, send invites and check who RSVP. Unlike existing wedding planner tools such as The Knot, we offer couples the service of planning their venue layout and assigning each individual guest to tables.
 
 ### Live Version
-Heroku Link here:
+ https://dashboard.heroku.com/apps/thawing-mountain-20143/logs
 
 ### Home Page here
 
