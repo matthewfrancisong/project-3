@@ -9,7 +9,7 @@ class EmailMailer < ApplicationMailer
       mail(
         from: @admin.email,
         to: @guest.email,
-        subject: "You're Invited: #{@admin.title}"
+        subject: "You're Invited! #{@admin.title}wedding on #{@admin.date.to_formatted_s(:long)}"
       )
     end
 end

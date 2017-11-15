@@ -2,7 +2,6 @@
 p {
   font-size: 30px;
 }
-
 body {
     display: flex;
     min-height: 100vh;
@@ -14,9 +13,6 @@ main {
 }
 nav{
   background-color: $nav-bar;
-}
-div.container {
-  margin: 0 auto;
 }
 div.wrapper{
 	float:left; /* important */
@@ -36,16 +32,49 @@ h1.title{
   font-family: $font-title;
   text-align: center;
 }
+.tablecontainer {
+  margin: 0 auto;
+  padding-right: 10%;
+  text-align: center;
+  font-size: 18px;
+}
 
+#table-out {
+  background-color: $nav-bar;
+  width: 15%;
+}
+#addtable{
+  background-color: #E8F7C0;
+  color: black;
+  border: 0px;
+  font-size: 25px;
+}
+#removetable{
+  background-color: #FE5F55;
+  color: black;
+  border: 0px;
+  height: 25px;
+  width: 30px;
+  text-align: center;
 
+}
+#removeform{
+  height: 50px;
+}
 .hidden{
   display: none;
 }
-
-
 .sideprofile{
   font-size: 15px;
   text-align: center;
+}
+.tablesize{
+  height: 400px;
+}
+.row{
+  padding-left: 5%;
+  margin: 0 auto;
+  height: 20px;
 }
 #toast-container {
    top: 45px !important;
@@ -66,11 +95,9 @@ h1.title{
   background-color: $nav-bar;
   color: black;
 }
-
 #homeOne{
   width: 100%
 }
-
 #slide-out {
   background-color: $nav-bar;
   width: 11%;
@@ -84,19 +111,9 @@ h1.title{
   text-align: center;
   color: white;
 }
-
 #navTwo {
   padding: 15% 15%;
   margin: 5% 0px;
   width: 100%;
   background-color: $nav-bar;
-}
-
-#table-out {
-  background-color: $nav-bar;
-  width: 20%;
-}
-#days {
-  font-size:  40px;
-
 }
