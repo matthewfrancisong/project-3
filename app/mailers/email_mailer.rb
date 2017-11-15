@@ -1,5 +1,4 @@
 class EmailMailer < ApplicationMailer
-  # default :from => admin.email
 
     def send_all_guest_email(guest, message, admin)
 
