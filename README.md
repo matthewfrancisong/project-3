@@ -15,7 +15,6 @@ Planning for a wedding can be a nightmare. WeddingTable to the rescue! This webs
 ### Entity Relationship Diagram (ERD)
 ![erd](/project-log/erd.png)
 
-
 ### Wireframes
 ![tableplanner](/project-log/tableplanner.png)
 
@@ -58,7 +57,7 @@ Things you may want to cover:
 
 * ...       -->
 
-the vows
+<!-- the vows
 the proposal
 Lifetime forever
 LoveLast
@@ -66,4 +65,4 @@ WeddingProposal
 LoveTrain
 aLifeTime
 SweetDove
-LoveCarriage
+LoveCarriage -->
