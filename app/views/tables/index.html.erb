@@ -1,16 +1,23 @@
-<div class = container>
+
     <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
     <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
       <table class = "bordered">
         <% @guestlists.each do |g| %>
           <tbody>
-            <td>
-              <%= g.name %>
-              <%= form_for(g, :html => {:class => 'addform'}, url: tables_path) do |f| %>
-              <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
-              <%= hidden_field_tag 'table_guest_id', g.id %>
-              <%= f.submit("Update", class: 'btn addlist') %>
-              <% end %>
+            <td class = "guesttable">
+              <div class="row">
+                <div class="col s7">
+                  <%= g.name %>
+                  <%= form_for(g, :html => {:class => 'addform'}, url: tables_path) do |f| %>
+                  <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
+                  </div>
+                  <div class="col s3">
+                  <%= hidden_field_tag 'table_guest_id', g.id %>
+                  <%= f.submit("+", id: 'addtable', class: 'btn pulse') do%>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
             </td>
           </tbody>
         <% end %>
@@ -28,12 +35,12 @@
       </script>
     <% end %>
 
-
+<div class = "tablecontainer">
   <h1> Tables & Seatings</h1>
     <div class="row">
       <% @table_list.each do |key, value| %>
       <div class="col s4">
-        <table class="highlight">
+        <table class="centered">
           <thead>
             <tr>
               Table : <%= key %>
@@ -41,13 +48,17 @@
           </thead>
           <tbody>
             <tr>
-                <td>
+                <td class="tablesize">
                   <% value.each do |v| %>
+                  <div id="removeform"class="col s8">
                     <%= v.name %>
                     <%= form_for(v, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
                     <%= f.hidden_field :table_num, value: nil %>
+                  </div>
+                  <div id="removeform"class="col s3">
                     <%= hidden_field_tag 'table_guest_id', v.id %>
-                    <%= f.submit("Remove", class: 'btn removelist') %>
+                    <%= f.submit("x", id: 'removetable', class: 'btn') %>
+                  </div>
                   <% end %>
                   <% end %>
                 </td>
