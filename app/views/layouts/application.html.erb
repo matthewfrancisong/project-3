@@ -21,7 +21,6 @@
           <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
           <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>Home<% end %></li>
           <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i>Guestlist<% end %></li>
-          <li><%= link_to email_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">mail</i>Send Email<% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium">exit_to_app</i>Log Out<% end %></li>
         <% end %>
       </ul>
@@ -32,22 +31,29 @@
         <div style="text-align: center;">
           <h5><%= current_admin.title %></h5>
             <br>
-          <a class = "btn-large" id = "days">
-            <%= (current_admin.date - Date.current).to_i %>
-          </a>
+            <% if current_admin.date %>
+              <a class = "btn-large" id = "days">
+                <%= (current_admin.date - Date.current).to_i %>
+              </a>
+              <% end %>
           <br>
           <br>
           <span class="sideprofile title"> days to the wedding!</span>
             <br>
-          <%= pie_chart $response, legend: false %>
+            <% if $response %>
+            <p> RSVPs </p>
+            <p> Yes: <%=  $response[true] %> </p>
+            <p> No: <%= $response[false] %> </p>
+            <p> Not responded: <%= $response[nil] %> </p>
+            <% end %>
+
         </div>
     <% end %>
       </ul>
-
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      
+
   <%= yield %>
     </main>
     <footer class="page-footer N/A transparent">
