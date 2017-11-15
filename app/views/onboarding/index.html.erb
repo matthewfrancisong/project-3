@@ -1,0 +1,40 @@
+<div class = container>
+
+<h2>User Onboarding</h2>
+
+<%= form_for(@admin, url: onboarding_index_path(@admin), html: {method: "put"}) do |f| %>
+  <div class="field">
+    <%= f.label :Wedding_Date %><br />
+    <%= f.date_field :date,  autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Wedding_start_time %><br />
+    <%= f.time_field :time,  autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Couple_names %><br />
+    <%= f.text_field :title,  autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Venue %><br />
+    <%= f.text_field :venue,  autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Number_of_tables %><br />
+    <%= f.number_field :num_tables,  autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Number_of_seats %><br />
+    <%= f.number_field :num_seats,  autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+</div>

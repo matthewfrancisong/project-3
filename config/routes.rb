@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
-  # devise_for :admins, controllers: { registrations: 'registrations' }
-  devise_for :admins, path: '', path_names: {
+
+  # devise_for :admins,
+  devise_for :admins, controllers: { registrations: 'registrations' }, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
     sign_up: 'register',
   }
-  # , controllers: { registrations: 'registrations' }
 
   get 'email/index'
   post '/email/index', to: 'email#create'
   root 'main#index'
+  get 'onboarding/index', to: 'onboarding#index'
+  put 'onboarding/index', to: 'onboarding#update'
+
 
 
   resources :admins
