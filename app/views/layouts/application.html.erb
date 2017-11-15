@@ -28,26 +28,18 @@
 
       <ul id="slide-out" class="side-nav fixed right-aligned">
         <% if admin_signed_in? %>
-        <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <i id= "navTwo" class="material-icons large pulse">favorite_border</i>
-      </div></li>
-        <div style="text-align: center;">
-          <span class="sideprofile black-text title" style="font-weight: bold;"><%= current_admin.title %></span>
-            <br>
-          <span class="sideprofile black-text title">will be on</span>
-            <br>
-          <span class="sideprofile black-text date" style="font-weight: bold;"><%= current_admin.date.strftime("%B %d, %Y") %></span>
-            <br>
-          <span class="sideprofile black-text time" style="font-weight: bold;"><%= current_admin.time.strftime("%H:%M:%p") %></span>
-            <br>
-          <span class="sideprofile black-text title">venue will be at</span>
-            <br>
-          <span class="sideprofile black-text venue" style="font-weight: bold;"><%= current_admin.venue %></span>
 
-          <%= pie_chart $response %>
+        <div style="text-align: center;">
+          <h5><%= current_admin.title %></h5>
+            <br>
+          <a class = "btn-large" id = "days">
+            <%= (current_admin.date - Date.current).to_i %>
+          </a>
+          <br>
+          <br>
+          <span class="sideprofile black-text title"> days to the wedding!</span>
+            <br>
+          <%= pie_chart $response, legend: false %>
         </div>
     <% end %>
       </ul>
