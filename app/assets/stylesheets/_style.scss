@@ -37,18 +37,23 @@ h1.title{
   text-align: center;
 }
 
+
 .hidden{
   display: none;
-}
-
-#slide-out li i {
-  color: white;
 }
 
 
 .sideprofile{
   font-size: 15px;
   text-align: center;
+}
+#toast-container {
+   top: 45px !important;
+   right: auto !important;
+   left: 75%;
+  }
+#slide-out li i {
+  color: white;
 }
 #sideprofile{
   font-size: 20px;
@@ -65,7 +70,6 @@ h1.title{
 #homeOne{
   width: 100%
 }
-
 
 #slide-out {
   background-color: $nav-bar;
