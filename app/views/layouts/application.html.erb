@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= include_gon %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
@@ -48,7 +47,7 @@
             <br>
           <span class="sideprofile black-text venue" style="font-weight: bold;"><%= current_admin.venue %></span>
 
-          <%= pie_chart @response %>
+          <%= pie_chart $response %>
         </div>
     <% end %>
       </ul>
