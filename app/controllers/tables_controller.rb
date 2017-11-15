@@ -2,6 +2,8 @@ class TablesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_admin!
 
+
+
   def index
     @guestlists = current_admin.guests.where(table_num: nil)
                   .where(RSVP: [true, nil])
@@ -83,14 +85,21 @@ class TablesController < ApplicationController
   end
 
   def edit
-    @guest = Guest.find(params[:table_num])
+    @guest = Guest.find(params[:table_guest_id])
   end
 
   def update
+    table_number = params[:guest][:table_num].to_i
     @guest = Guest.find(params[:table_guest_id])
-    # render json: @guest
-    @guest.update(post_params)
-    redirect_to tables_path
+    # render json: table_number
+    if Guest.group(:table_num).count[table_number] == current_admin.num_seats
+      flash[:alert] = ''
+      redirect_to tables_path
+    else
+      @guest.update(post_params)
+      redirect_to tables_path
+    end
+
   end
 
   private

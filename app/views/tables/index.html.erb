@@ -17,6 +17,17 @@
       </table>
     </ul>
 
+    <% if notice %>
+      <script type="text/javascript">
+      Materialize.toast('Added Guest!', 2000, 'green')
+      </script>
+    <% end %>
+    <% if alert %>
+      <script type="text/javascript">
+      Materialize.toast('Table is full!', 1000, 'red rounded')
+      </script>
+    <% end %>
+
 
   <h1> Tables & Seatings</h1>
     <div class="row">
@@ -32,11 +43,13 @@
             <tr>
                 <td>
                   <% value.each do |v| %>
-                  <%= v.name %>
+                    <%= v.name %>
+                    <%= form_for(v, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
+                    <%= f.hidden_field :table_num, value: nil %>
+                    <%= hidden_field_tag 'table_guest_id', v.id %>
+                    <%= f.submit("Remove", class: 'btn removelist') %>
                   <% end %>
-
-                  <br>
-
+                  <% end %>
                 </td>
             </tr>
           </tbody>
