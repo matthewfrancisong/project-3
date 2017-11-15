@@ -39,9 +39,11 @@ h1.title{
   font-size: 18px;
 }
 
+// table page
 #table-out {
   background-color: $nav-bar;
   width: 15%;
+  color: white;
 }
 #addtable{
   background-color: #E8F7C0;
@@ -50,14 +52,18 @@ h1.title{
   font-size: 25px;
 }
 #removetable{
-  background-color: #FE5F55;
+  background-color: #90708C;
   color: black;
   border: 0px;
-  height: 25px;
-  width: 30px;
   text-align: center;
-
 }
+#addform{
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  display: inline;
+}
+
 #removeform{
   height: 50px;
 }
@@ -71,16 +77,14 @@ h1.title{
 .tablesize{
   height: 400px;
 }
-.row{
-  padding-left: 5%;
-  margin: 0 auto;
-  height: 20px;
-}
+
 #toast-container {
    top: 45px !important;
    right: auto !important;
    left: 75%;
   }
+
+//apllication
 #slide-out li i {
   color: white;
 }
@@ -101,6 +105,7 @@ h1.title{
 #slide-out {
   background-color: $nav-bar;
   width: 11%;
+  color: white;
 }
 #navOne {
   padding: 10px 35% 0 35%;
@@ -116,4 +121,5 @@ h1.title{
   margin: 5% 0px;
   width: 100%;
   background-color: $nav-bar;
+  color: white;
 }

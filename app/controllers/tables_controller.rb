@@ -3,7 +3,6 @@ class TablesController < ApplicationController
   before_action :authenticate_admin!
 
 
-
   def index
     @guestlists = current_admin.guests.where(table_num: nil)
                   .where(RSVP: [true, nil])
@@ -13,7 +12,7 @@ class TablesController < ApplicationController
 
 
     @table_list = {}
-
+    @height = (75*current_admin.num_seats)
     current_admin.num_tables.times do |i|
       @table_list[i + 1] = []
     end
@@ -89,6 +88,7 @@ class TablesController < ApplicationController
   end
 
   def update
+    # render json: params
     table_number = params[:guest][:table_num].to_i
     @guest = Guest.find(params[:table_guest_id])
     # render json: table_number
