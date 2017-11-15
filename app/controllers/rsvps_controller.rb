@@ -12,7 +12,7 @@ class RsvpsController < ApplicationController
     @rsvp =Guest.find(params[:id])
     @rsvp.update(post_params)
     redirect_to rsvp_path
-    flash[:alert] = "Your response has been recorded. Thank you!"
+    flash[:notice] = "Your response has been recorded. Thank you!"
   end
 
   private
