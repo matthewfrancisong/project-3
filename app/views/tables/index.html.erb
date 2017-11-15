@@ -10,8 +10,6 @@
                   <%= g.name %>
                   <%= form_for(g, :html => {:class => 'addform'}, url: tables_path) do |f| %>
                   <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
-                  </div>
-                  <div class="col s3">
                   <%= hidden_field_tag 'table_guest_id', g.id %>
                   <%= f.submit("+", id: 'addtable', class: 'btn pulse') do%>
                   <% end %>
@@ -54,8 +52,6 @@
                     <%= v.name %>
                     <%= form_for(v, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
                     <%= f.hidden_field :table_num, value: nil %>
-                  </div>
-                  <div id="removeform"class="col s3">
                     <%= hidden_field_tag 'table_guest_id', v.id %>
                     <%= f.submit("x", id: 'removetable', class: 'btn') %>
                   </div>
