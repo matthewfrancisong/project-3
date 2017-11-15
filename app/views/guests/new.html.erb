@@ -9,4 +9,10 @@
   <%= f.email_field :email %>
   <%= f.submit("Add New Guest", class: 'btn') %>
 <% end %>
+
+
+<!-- <p class="display"><%= display %></p> -->
+<%= @display.each do |name| %>
+<%= name %>
+<% end %>
 </div>

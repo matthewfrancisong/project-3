@@ -11,4 +11,6 @@ class ApplicationController < ActionController::Base
   def index
     @guests = Guest.where(admin_id: current_admin[:id])
   end
+
+  add_flash_types :display
 end

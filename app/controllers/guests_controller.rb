@@ -4,16 +4,21 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.where(admin_id: current_admin[:id]).order(:name)
-    @response = Guest.where(admin_id: current_admin[:id]).group(:RSVP).count
+    $response = Guest.where(admin_id: current_admin[:id]).group(:RSVP).count
   end
+
 
   def create
     current_admin.guests.create(post_params)
+    flash[:display] = {
+      name: post_params[:name]
+    }
     redirect_to new_guest_path
   end
 
   def new
     @new_guest = Guest.new
+    @display = []<<flash[:display]
   end
 
   def edit
