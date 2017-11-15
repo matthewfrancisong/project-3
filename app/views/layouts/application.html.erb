@@ -21,7 +21,6 @@
           <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
           <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>Home<% end %></li>
           <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i>Guestlist<% end %></li>
-          <li><%= link_to email_index_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">mail</i>Send Email<% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium">exit_to_app</i>Log Out<% end %></li>
         <% end %>
       </ul>
@@ -39,7 +38,9 @@
           <br>
           <span class="sideprofile black-text title"> days to the wedding!</span>
             <br>
-          <%= pie_chart $response, legend: false %>
+            <%= pie_chart [["Yes", $response[true]], ["No", $response[false]], ["Not responded", $response[nil]]], donut: true, legend: false, height: "180px" %>
+          <!-- <%= pie_chart $response, donut: true, legend: false, height: "180px" %> -->
+          RSVPs
         </div>
     <% end %>
       </ul>
