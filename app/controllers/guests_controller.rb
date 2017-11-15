@@ -10,15 +10,12 @@ class GuestsController < ApplicationController
 
   def create
     current_admin.guests.create(post_params)
-    flash[:display] = {
-      name: post_params[:name]
-    }
+    flash[:notice] = "#{post_params[:name]} has been added to the list!"
     redirect_to new_guest_path
   end
 
   def new
     @new_guest = Guest.new
-    @display = []<<flash[:display]
   end
 
   def edit
