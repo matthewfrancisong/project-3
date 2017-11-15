@@ -4,10 +4,24 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h6>Dear!<%= @guest.name %></h6>
-    <p><%= @admin.name %></p>
-    <p><%= link_to "RSVP here!", "http:localhost:4000/rsvps/#{@guest.id}/edit" %></p>
+
+    <p>Dear <%= @admin.name %>,</p>
     <p><%= @message %></p>
+    <p>
+      <u>Wedding Details</u><br>
+      <%=@admin.date.to_formatted_s(:long) %> <br>
+      <%=@admin.venue %> <br>
+      <%=@admin.time.strftime('%r') %> <br>
+    </p>
+
+    <p>Kindly indicate whether you can make it here! <%= link_to "RSVP here!", "http:localhost:4000/rsvps/#{@guest.id}/edit" %></p>
+  <br>
+  <p>Hope to hear from you soon!</p>
+  <br>
+  <p>
+    Warm Regards <br>
+  <%= @admin.title %>
+  </p>
 
   </body>
 </html>
