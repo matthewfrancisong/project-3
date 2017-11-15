@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @guests = Guest.where(admin_id: current_admin[:id]).order(:name)
+    @guests = Guest.where(admin_id: current_admin[:id])
     $response = Guest.where(admin_id: current_admin[:id]).group(:RSVP).count
   end
 

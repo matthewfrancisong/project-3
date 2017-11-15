@@ -31,23 +31,29 @@
         <div style="text-align: center;">
           <h5><%= current_admin.title %></h5>
             <br>
-          <a class = "btn-large" id = "days">
-            <%= (current_admin.date - Date.current).to_i %>
-          </a>
+            <% if current_admin.date %>
+              <a class = "btn-large" id = "days">
+                <%= (current_admin.date - Date.current).to_i %>
+              </a>
+              <% end %>
           <br>
           <br>
           <span class="sideprofile black-text title"> days to the wedding!</span>
             <br>
-            <%= pie_chart [["Yes", $response[true]], ["No", $response[false]], ["Not responded", $response[nil]]], donut: true, legend: false, height: "180px" %>
-          <!-- <%= pie_chart $response, donut: true, legend: false, height: "180px" %> -->
-          RSVPs
+            <% if $response.length > 0 %>
+            <p> RSVPs </p>
+            <p> Yes: <%=  $response[true] %> </p>
+            <p> No: <%= $response[false] %> </p>
+            <p> Not responded: <%= $response[nil] %> </p>
+            <% end %>
+
         </div>
     <% end %>
       </ul>
-
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      
   <%= yield %>
     </main>
     <footer class="page-footer N/A transparent">
