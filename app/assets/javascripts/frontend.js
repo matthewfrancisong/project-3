@@ -28,7 +28,7 @@ $(document).on("turbolinks:load", function() {
   );
   $('select').material_select();
   $('.slider').slider({
-    height: 600,
+    height: 650,
     indicators: false,
     interval: 10000,
     transition: 500,
