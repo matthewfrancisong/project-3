@@ -29,16 +29,16 @@
         <% if admin_signed_in? %>
 
         <div style="text-align: center;">
-          <h5><%= current_admin.title %></h5>
+          <h4><%= current_admin.title %></h4>
             <br>
             <% if current_admin.date %>
-              <a class = "btn-large" id = "days">
+              <a class = "btn-large pulse" id = "days">
                 <%= (current_admin.date - Date.current).to_i %>
               </a>
               <% end %>
           <br>
           <br>
-          <span class="sideprofile title"> days to the wedding!</span>
+          <span class="sideprofile"> days to the wedding!</span>
             <br>
             <% if $response %>
             <p> RSVPs </p>
