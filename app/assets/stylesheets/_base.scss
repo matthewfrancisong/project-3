@@ -45,10 +45,10 @@ a.btn {
   background-color:#E8F7C0 !important;
   color: black;
 }
-
 .input-field .prefix.active{
   color: #6BBAA7;
 }
+
 input[type=email]:not(.browser):focus:not([readonly]){
     border-bottom: 1px solid #6BBAA7 ;
     box-shadow: 0 1px 0 0 #6BBAA7 ;
@@ -82,4 +82,7 @@ input[type=number]:not(.browser):focus:not([readonly]){
 }
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
   background-color: #FCCB73;
+}
+.slider{
+  margin-top: 40px;
 }

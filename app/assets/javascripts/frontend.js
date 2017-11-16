@@ -27,7 +27,12 @@ $(document).on("turbolinks:load", function() {
         }
   );
   $('select').material_select();
-  $('.slider').slider();
+  $('.slider').slider({
+    height: 800,
+    indicators: false,
+    interval: 10000,
+    transition: 500,
+  });
   // Pause slider
   $('.slider').slider('pause');
   // Start slider
