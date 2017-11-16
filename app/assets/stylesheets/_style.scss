@@ -134,7 +134,18 @@ h1.title{
   widows: 100%;
   vertical-align:middle;
 }
-
+// guest list
+.guestlistbtn {
+  display: flex;
+  justify-content: center;
+}
+.guestlistbtn .btn{
+  margin: 30px;
+}
+#edit{
+  padding: 0px;
+  width: 45px;
+}
 
 // progress bar
  .progressbar {
