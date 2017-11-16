@@ -1,27 +1,37 @@
-<ul class="progressbar">
-  <% if @guests.count > 0 %>
-    <li class="active">
-  <% else %>
-    <li>
-  <% end %>
-    Add guests</li>
-
-    <li>Send emails</li>
-    <li>Manage seating</li>
-    <li>Review RSVPs</li>
-</ul>
+<% if alert %>
+  <script type="text/javascript">
+  Materialize.toast('Guest Added !', 3000, 'rounded')
+  </script>
+<% end %>
 <div class = container>
+  <ul class="progressbar">
+    <% if @guests.count > 0 %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+      Add guests</li>
 
+      <li>Send emails</li>
+      <li>Manage seating</li>
+      <li>Review RSVPs</li>
+  </ul>
+  <br>
+  <br>
+  <br>
 
 <h1>Add Guests</h1>
-
-<%= form_for @new_guest do |f| %>
-  <%= f.label("Name:")%>
-  <%= f.text_field :name %>
-  <%= f.label("Email:")%>
-  <%= f.email_field :email %>
-  <%= f.submit("Add New Guest", class: 'btn') %>
-  <%= link_to guests_path, class: 'btn' do %>Return to Guest List<% end %>
+<br>
+<div class="row">
+<%= form_for(@new_guest, :html => {:class => 'guestadd'}) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "input-field" %>
+  <%= f.label :email%>
+  <%= f.email_field :email, class: "input-field" %>
+  <%= f.submit("Add New Guest", class: 'btn hoverable waves-effect submit') %>
+  <%= link_to guests_path, class: 'btn hoverable waves-effect new' do %>Return to Guest List<% end %>
 <% end %>
+</div>
+<br>
 
 </div>
