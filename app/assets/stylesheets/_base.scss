@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Spirax|Quicksand');
 
-$font-title: 'Spirax', cursive;
+$font-title: 'Quicksand', bold;
 $nav-bar: #926D99;
 html{
    font-family: Quicksand;
 }
 header, main, footer {
-
      padding-left: 11%;
      padding-right: 6%;
    }
@@ -15,7 +14,6 @@ header, main, footer {
        padding-left: 0;
      }
    }
-
 body {
     display: flex;
     min-height: 100vh;
@@ -27,7 +25,8 @@ main {
 }
 h1{
   text-align:center;
-  font-weight: bold
+  font-weight: bold;
+  font-size: 100px !important;
 }
 a.btn {
   background-color: #E8F7C0;
@@ -73,6 +72,11 @@ input[type=number]:not(.browser):focus:not([readonly]){
     border-bottom: 1px solid #6BBAA7 ;
     box-shadow: 0 1px 0 0 #6BBAA7 ;
 }
+input[type="checkbox"]:checked + label:before{
+    border-right: 2px solid #6BBAA7 ;
+    border-bottom: 2px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
 //calendar
 .picker__date-display{
   background-color: #6BBAA7;
@@ -83,6 +87,11 @@ input[type=number]:not(.browser):focus:not([readonly]){
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
   background-color: #FCCB73;
 }
-.slider{
-  margin-top: 40px;
+
+.slides img{
+  opacity: 0.7;
+}
+
+.slides .btn{
+  background-color: #eb776a !important;
 }

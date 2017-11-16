@@ -14,14 +14,15 @@
   <br>
   <br>
   <br>
-
-<h4>Customize your E-mail message to send to all your guests</h4><br>
-
+<h1>Email</h1>
+<br>
+<h4 style="text-align: center;">Customize your E-mail message to send to all your guests</h4><br>
+<br>
 <h6>Default Subject-line: </h6>
 <h5><em>You're Invited! <%= @admin.title  %>  Wedding on <%=@admin.date.to_formatted_s(:long) %>!</em></h5>
 
 <br>
-<h5>Message</h5>
+<h5>Message :</h5>
 <%= form_tag(email_index_path,:html => {:class => 'email'}, method: :post) %>
 <%= text_area_tag 'message',nil,:placeholder => "#Your Main message here!
 E.g. Hope you have been well! Michelle and I will be getting married on 23th Sept at St Peters and Paul.
