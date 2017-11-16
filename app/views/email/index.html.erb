@@ -1,6 +1,11 @@
 <ul class="progressbar">
     <li class="active">Add guests</li>
-    <li class="active">Send emails</li>
+    <% if @message %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+    Send emails</li>
     <li>Manage seating</li>
     <li>Review RSVPs</li>
 </ul>
