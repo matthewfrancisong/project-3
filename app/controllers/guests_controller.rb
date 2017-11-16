@@ -3,15 +3,19 @@ class GuestsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @guests = Guest.where(admin_id: current_admin[:id]).order(:name)
+    @guests = Guest.where(admin_id: current_admin[:id])
     $response = Guest.where(admin_id: current_admin[:id]).group(:RSVP).count
   end
 
 
   def create
-    current_admin.guests.create(post_params)
+    if current_admin.guests.create(post_params)[:id]
     flash[:notice] = "#{post_params[:name]} has been added to the list!"
     redirect_to new_guest_path
+    else
+      flash[:notice] = "Name cannot be blank."
+      redirect_to new_guest_path
+    end
   end
 
   def new

@@ -1,8 +1,23 @@
-<div class = container>
+<div class="container">
 
-<h2>User Onboarding</h2>
-
+<h3>Let's Introduce Ourselves!</h3>
 <%= form_for(@admin, url: onboarding_index_path(@admin), html: {method: "put"}) do |f| %>
+<%= f.hidden_field :form_type, :value => "wedding" %>
+
+  <% if @admin.errors.any?  %>
+    <h4>Errors:</h4>
+    <ul>
+      <% @admin.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Couple_names %><br />
+      <%= f.text_field :title, placeholder: "e.g. Shane & Elizabeth", autofocus: true %>
+    </div>
+
   <div class="field">
     <%= f.label :Wedding_Date %><br />
     <%= f.date_field :date,  autofocus: true %>
@@ -13,28 +28,24 @@
     <%= f.time_field :time,  autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :Couple_names %><br />
-    <%= f.text_field :title,  autofocus: true %>
-  </div>
 
   <div class="field">
     <%= f.label :Venue %><br />
-    <%= f.text_field :venue,  autofocus: true %>
+    <%= f.text_field :venue, placeholder: "e.g. Pan Pacific Ballroom 3", autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :Number_of_tables %><br />
+    <%= f.label :Number_of_Wedding_tables %><br />
     <%= f.number_field :num_tables,  autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :Number_of_seats %><br />
+    <%= f.label :Number_of_Wedding_seats %><br />
     <%= f.number_field :num_seats,  autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Get Started!" %>
   </div>
 <% end %>
 </div>

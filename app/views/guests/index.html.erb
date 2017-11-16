@@ -1,9 +1,34 @@
 <div class = container>
-<h1>Guests List</h1>
-<p>Add guests before managing seating</p>
-<%= link_to new_guest_path, class: "btn" do %>Add Guest<% end %>
-<%= link_to tables_path, class: "btn" do %>Manage Seating<% end %>
+
+  <ul class="progressbar">
+
+    <% if @guests.count > 0 %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+      Add guests</li>
+
+    <li>Send emails</li>
+
+    <% if @guests.count(:table_num) > 0 %>
+      <li class="active">Manage seating</li>
+      <li class="active">Review RSVPs</li>
+    <% else %>
+      <li>Manage seating</li>
+      <li>Review RSVPs</li>
+    <% end %>
+  </ul>
+
+<h1>Guest List</h1>
+<% if @guests.count < 1 %>
+<p>Guest List is empty</p>
+<% end %>
+<% if @guests.count > 0 %>
 <%= link_to email_index_path, class: "btn" do %>Send Email<% end %>
+<%= link_to tables_path, class: "btn" do %>Manage Seating<% end %>
+<% end %>
+<%= link_to new_guest_path, class: "btn" do %>Add Guest<% end %>
 
 <table class="highlight">
   <thead>
@@ -18,7 +43,7 @@
   </thead>
   <tbody>
     <tr>
-      <% @guests.each do |guest| %>
+      <% @guests.order(:name).each do |guest| %>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
       <td><%= guest.RSVP %></td>
@@ -26,7 +51,7 @@
       <td>
         <%= form_for(guest, url: guest_path(guest), html: {method: "put"}) do |f| %>
           <%= f.select :check_in, ([[''],["Yes",true],["No",false]]),{}, onchange: "this.form.submit()" %>
-          <!-- <%= f.submit("Check in", class: 'btn') %> -->
+          <%= f.submit("Check in", class: 'btn') %>
         <% end %>
       </td>
       <td><%= link_to "edit", edit_guest_path(guest) %></td>

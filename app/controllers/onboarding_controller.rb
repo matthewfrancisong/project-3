@@ -11,13 +11,14 @@ class OnboardingController < ApplicationController
     if @admin.update(post_params)
       redirect_to guests_path
     else
-      redirect_back fallback_location: root_path
+      render :action => 'index'
     end
 
   end
 
   private
   def post_params
-  params.require(:admin).permit(:title, :venue, :date, :time, :num_tables, :num_seats)
+  params.require(:admin).permit(:title, :venue, :date, :time, :num_tables, :num_seats, :form_type)
   end
+
 end

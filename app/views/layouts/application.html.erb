@@ -31,20 +31,28 @@
         <div style="text-align: center;">
           <h5><%= current_admin.title %></h5>
             <br>
-          <a class = "btn-large" id = "days">
-          </a>
+            <% if current_admin.date %>
+              <a class = "btn-large" id = "days">
+                <%= (current_admin.date - Date.current).to_i %>
+              </a>
+              <% end %>
           <br>
           <br>
-          <span class="sideprofile black-text title"> days to the wedding!</span>
+          <span class="sideprofile title"> days to the wedding!</span>
             <br>
-          RSVPs
+            <% if $response %>
+            <p> RSVPs </p>
+            <p> Yes: <%=  $response[true] %> </p>
+            <p> No: <%= $response[false] %> </p>
+            <p> Not responded: <%= $response[nil] %> </p>
+            <% end %>
         </div>
     <% end %>
       </ul>
-
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+
   <%= yield %>
     </main>
     <footer class="page-footer N/A transparent">
