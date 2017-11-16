@@ -7,16 +7,26 @@
       <li>
     <% end %>
       Add guests</li>
-
-    <li>Send emails</li>
+    <% if $email_sent %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+    Send emails</li>
 
     <% if @guests.count(:table_num) > 0 %>
-      <li class="active">Manage seating</li>
-      <li class="active">Review RSVPs</li>
+      <li class="active">
     <% else %>
-      <li>Manage seating</li>
-      <li>Review RSVPs</li>
+      <li>
     <% end %>
+      Manage seating</li>
+
+    <% if @guests.group(:RSVP).distinct.count(:RSVP).length > 1 %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+    Review RSVPs</li>
   </ul>
 
 <h1>Guest List</h1>
@@ -45,7 +55,13 @@
       <% @guests.order(:name).each do |guest| %>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
-      <td><%= guest.RSVP %></td>
+
+      <% if guest.RSVP == true %>
+        <td>Yes</td>
+      <% elsif guest.RSVP == false %>
+        <td>No</td>
+      <% end %>
+
       <td><%= guest.table_num %></td>
       <td>
         <%= form_for(guest, url: guest_path(guest), html: {method: "put"}) do |f| %>
