@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
     flash[:notice] = "#{post_params[:name]} has been added to the list!"
     redirect_to new_guest_path
     else
-      flash[:notice] = "Name cannot be blank."
+      flash[:notice] = "Name & E-mail cannot be blank."
       redirect_to new_guest_path
     end
   end

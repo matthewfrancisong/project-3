@@ -14,13 +14,13 @@
   <body>
     <ul id="slide-out" class="side-nav fixed">
       <% unless admin_signed_in? %>
-          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>Home<% end %></li>
-          <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">assignment_ind</i>Sign In<% end %></li>
+          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>TheHappyCouple<% end %></li>
           <li><%= link_to new_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">border_color</i>Sign up<% end %></li>
+          <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">assignment_ind</i>Sign In<% end %></li>
         <% else %>
-          <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
-          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>Home<% end %></li>
+          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>TheHappyCouple<% end %></li>
           <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i>Guestlist<% end %></li>
+          <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium">exit_to_app</i>Log Out<% end %></li>
         <% end %>
       </ul>
@@ -44,7 +44,7 @@
           <br>
           <br>
               <% if (current_admin.date - Date.current).to_i > 1 %>
-              <span class="sideprofile"> days to the wedding!</span>
+              <span class="sideprofile"> days to wedding!</span>
               <% else %>
               <span class="sideprofile"> day to the wedding!</span>
               <% end %>
