@@ -1,5 +1,4 @@
-
-    <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
+  <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
     <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
       <table class = "bordered">
         <% @guestlists.each do |g| %>
@@ -32,6 +31,13 @@
       </script>
     <% end %>
 
+      <ul class="progressbar">
+        <li class="active">Add guests</li>
+        <li class="active">Send emails</li>
+        <li class="active">Manage seating</li>
+        <li>Review RSVPs</li>
+    </ul>
+
 <div class = "tablecontainer">
   <h1> Tables & Seatings</h1>
     <div class="row">
@@ -42,13 +48,14 @@
             <tr>
               Table : <%= key %>
               <br>
-              Spots left : <%=@current_seats-value.count%>
+              Speats : <%=@current_seats-value.count%>
               <br>
             </tr>
           </thead>
           <tbody>
             <tr id="removeform" style="height: <%=@height%>px;">
                 <td class="row">
+                  <blockquote>
                   <% value.each do |v| %>
                   <div class="row">
                       <div class="col s8">
@@ -64,6 +71,7 @@
 
                   <% end %>
                   <% end %>
+                </blockquote>
                 </td>
             </tr>
           </tbody>

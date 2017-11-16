@@ -27,29 +27,58 @@
 
       <ul id="slide-out" class="side-nav fixed right-aligned">
         <% if admin_signed_in? %>
-
-        <div style="text-align: center;">
-          <h4><%= current_admin.title %></h4>
+        <div>
+          <table class="centered">
+          <% if $response %>
+          <thead>
+          <tr>
+            <th>
+              <h4>
+                <%= current_admin.title %>
+              </h4>
             <br>
-            <% if current_admin.date %>
+                <% if current_admin.date %>
               <a class = "btn-large pulse" id = "days">
                 <%= (current_admin.date - Date.current).to_i %>
               </a>
+          <br>
+          <br>
+              <% if (current_admin.date - Date.current).to_i > 1 %>
+              <span class="sideprofile"> days to the wedding!</span>
+              <% else %>
+              <span class="sideprofile"> day to the wedding!</span>
               <% end %>
-          <br>
-          <br>
-          <span class="sideprofile"> days to the wedding!</span>
-            <br>
-            <% if $response %>
-            <p> RSVPs </p>
-            <p> Yes: <%=  $response[true] %> </p>
-            <p> No: <%= $response[false] %> </p>
-            <p> Not responded: <%= $response[nil] %> </p>
-            <% end %>
-        </div>
-    <% end %>
+              <% end %>
+            </th>
+          </tr>
+          </thead>
+          <tbody class="rsvp_icons">
+          <tr>
+            <td><h5> RSVPs </h5></td>
+          </tr>
+          <tr>
+            <td><i class="material-icons small">sentiment_very_satisfied</i>  Yes : <%=  $response[true] %> </td>
+          </tr>
+          <tr>
+            <td><i class="material-icons small">sentiment_very_dissatisfied</i> No : <%= $response[false] %> </td>
+          </tr>
+          <tr>
+            <td></i>Undecided : <%= $response[nil] %> </td>
+          </tr>
+          <tr>
+            <td>
+              <div class = "advert">
+                  Ad Space Here
+              </div>
+             </td>
+          </tr>
+        </table>
+      </div>
+          </tbody>
+          <% end %>
+      <% end %>
       </ul>
-    <main>
+      <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
