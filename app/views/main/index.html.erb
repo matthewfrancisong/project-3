@@ -4,34 +4,42 @@
     <li>
       <%= image_tag("table1.jpg", :alt => "cover 1") %> <!-- random image -->
       <div class="caption center-align">
-        <h1 style= "color: #eb776a;">The Happy Couple</h1>
-        <h4 style= "color: #eb776a;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+        <h1>The Happy Couple</h1>
+        <h4 class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
         <br>
+        <% unless admin_signed_in? %>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
+        <% end %>
       </div>
     </li>
     <li>
 <%= image_tag("table5.jpg", :alt => "cover 1") %>      <div class="caption center-align">
-        <h1 style= "color: black;">The Happy Couple</h1>
-        <h4 style= "color: black;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <h1>The Happy Couple</h1>
+        <h4 class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
         <br>
+        <% unless admin_signed_in? %>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
+        <% end %>
       </div>
     </li>
     <li>
 <%= image_tag("table9.jpg", :alt => "cover 1") %>      <div class="caption center-align">
-        <h1 style= "color: black;">The Happy Couple</h1>
-        <h4 style= "color: black;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <h1>The Happy Couple</h1>
+        <h4 class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
         <br>
+        <% unless admin_signed_in? %>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
+        <% end %>
       </div>
     </li>
     <li>
 <%= image_tag("table7.jpg", :alt => "cover 1") %>      <div class="caption center-align">
-        <h1 style= "color: #eb776a;">The Happy Couple</h1>
-        <h4 style= "color: #eb776a;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <h1>The Happy Couple</h1>
+        <h4 class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
         <br>
+        <% unless admin_signed_in? %>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
+        <% end %>
       </div>
     </li>
   </ul>
