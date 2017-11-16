@@ -14,7 +14,8 @@ class EmailController < ApplicationController
       EmailMailer.send_all_guest_email(@guest, @message, @admin).deliver
     end
     flash[:notice] = "Email Sent Successfully!"
+    $email_sent = true
     redirect_to guests_path
-    
+
   end
 end
