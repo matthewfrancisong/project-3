@@ -29,6 +29,10 @@ main {
     flex: 1 0 auto;
     width: 95%;
 }
-.field input text_field{
-  color: red;
+input[type=email]:not(.browser-default):focus:not([readonly]){
+    border-bottom: 5px solid rgba(174,52,75,1);
+    box-shadow: 5px solid green;
+}
+.input-field .prefix.active{
+  color: blue !important;
 }
