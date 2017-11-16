@@ -16,7 +16,7 @@
   <% end %>
 
    <div class="input-field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>leave blank if you don't want to change it</i><br />
     <%= f.password_field :password, autocomplete: "on" %>
     <% if @minimum_password_length %>
       <br />
@@ -30,18 +30,18 @@
   </div>
 
   <div class="input-field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>we need your current password to confirm your changes</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="input-field">
     <%= f.label :Wedding_Date %><br />
-    <%= f.date_field :date,  autofocus: true %>
+    <%= f.date_field :date,  autofocus: true, class: 'datepicker' %>
   </div>
 
   <div class="input-field">
     <%= f.label :Wedding_start_time %><br />
-    <%= f.time_field :time,  autofocus: true %>
+    <%= f.time_field :time,  autofocus: true, class: 'timepicker' %>
   </div>
 
   <div class="input-field">

@@ -3,33 +3,34 @@
   Materialize.toast('Table is full !', 3000, 'rounded')
   </script>
 <% end %>
-
-  <ul id="table-out" class="side-nav fixed right-aligned collection with-header">
-    <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
-      <table class = "bordered">
-        <% @guestlists.each do |g| %>
-          <tbody>
-            <td class = "guesttable">
-              <td class="row">
-                  <div id="addform" class="row">
-                    <div class="col s4">
-                      <%= g.name %>
-                    </div>
-                    <div class="col s8">
-                      <%= form_for(g, :html => {:class => 'addingform'}, url: tables_path) do |f| %>
-                      <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
-                      <%= hidden_field_tag 'table_guest_id', g.id %>
-                      <%= f.submit("+", id: 'addtable', class: 'btn hoverable waves-effect') do%>
-                    </div>
+<ul id="table-out" class="side-nav fixed right-aligned collection with-header">
+  <li id="listheader" class="collection-header"><h4><i class="material-icons small">accessibility</i> Guest List</h4></li>
+    <table class = "bordered">
+      <% @guestlists.each do |g| %>
+        <tbody>
+          <td class = "guesttable">
+            <td class="row">
+                <div id="addform" class="row">
+                  <div class="col s4">
+                    <%= g.name %>
                   </div>
-                  <% end %>
+                  <div class="col s8">
+                    <%= form_for(g, :html => {:class => 'addingform'}, url: tables_path) do |f| %>
+                    <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
+                    <%= hidden_field_tag 'table_guest_id', g.id %>
+                    <%= f.submit("+", id: 'addtable', class: 'btn hoverable waves-effect') do%>
+                  </div>
+                </div>
                 <% end %>
-              </td>
+              <% end %>
             </td>
-          </tbody>
-        <% end %>
-      </table>
-    </ul>
+          </td>
+        </tbody>
+      <% end %>
+    </table>
+  </ul>
+
+
 
     <div class = "container">
       <ul class="progressbar">
@@ -49,7 +50,7 @@
 <br>
 <br>
 <br>
-  <h1> Tables & Seatings</h1>
+  <h1 style="text-align: center; font-size: 35px;"> Tables & Seatings</h1>
   <br>
     <div class="row">
       <% @table_list.each do |key, value| %>
@@ -59,14 +60,13 @@
             <tr>
               Table : <%= key %>
               <br>
-              Speats : <%=@current_seats-value.count%>
+              Seats : <%=@current_seats-value.count%>
               <br>
             </tr>
           </thead>
           <tbody>
             <tr id="removeform" style="height: <%=@height%>px;">
                 <td class="row">
-                  <blockquote>
                   <% value.each do |v| %>
                   <div class="row">
                       <div class="col s8">
@@ -79,10 +79,8 @@
                     <%= f.submit("-", id: 'removetable', class: 'btn btn-floating') %>
                   </div>
                     </div>
-
                   <% end %>
                   <% end %>
-                </blockquote>
                 </td>
             </tr>
           </tbody>

@@ -2,34 +2,35 @@
 <div class="slider">
   <ul class="slides">
     <li>
-      <img src="https://images.unsplash.com/photo-1509635164051-5584296265cd?auto=format&fit=crop&w=2104&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"> <!-- random image -->
+      <%= image_tag("table1.jpg", :alt => "cover 1") %> <!-- random image -->
       <div class="caption center-align">
-        <h1>Happy Couple</h1>
-        <h5 class="light grey-text text-lighten-3">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+        <h1 style= "color: #E8F7C0;">Happy Couple</h1>
+        <h4 style= "color: #E8F7C0;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+        <br>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
       </div>
     </li>
     <li>
-      <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
-      <div class="caption center-align">
-        <h3>Happy Couple</h3>
-        <h5 class="light grey-text text-lighten-3">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+<%= image_tag("table5.jpg", :alt => "cover 1") %>      <div class="caption center-align">
+        <h1 style= "color: black;">Happy Couple</h1>
+        <h4 style= "color: black;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <br>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
       </div>
     </li>
     <li>
-      <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
-      <div class="caption center-align">
-        <h3>Happy Couple</h3>
-        <h5 class="light grey-text text-lighten-3">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+<%= image_tag("table9.jpg", :alt => "cover 1") %>      <div class="caption center-align">
+        <h1 style= "color: black;">Happy Couple</h1>
+        <h4 style= "color: black;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <br>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
       </div>
     </li>
     <li>
-      <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-      <div class="caption center-align">
-        <h3>Happy Couple</h3>
-        <h5 class="light grey-text text-lighten-3">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h5>
+<%= image_tag("table7.jpg", :alt => "cover 1") %>      <div class="caption center-align">
+        <h1 style= "color: #E8F7C0;">Happy Couple</h1>
+        <h4 style= "color: #E8F7C0;" class="light ">Effortlessly organise, RSVPs, guest-list and planning guest to tables</h4>
+        <br>
         <a><%= link_to edit_admin_registration_path, class: "btn hoverable waves-effect pulse" do %>Sign Up !<% end %></a>
       </div>
     </li>
@@ -39,27 +40,27 @@
 <%= yield %>
 </main>
 <div class = "container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p style="text-align: center; font-size: 35px;"> Less Stress. More time for what matters most to you.</p>
     <div class="row">
       <div class="col s4">
         <div class="promo">
-        <i class="material-icons">flash_on</i>
-        <p class="promo-caption">Speeds up development</p>
-        <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+        <div><%= image_tag("table2.jpg", :alt => "cover 1") %></div>
+        <p class="promo-caption center">24/7</p>
+        <p class="light center ">Keep up with attendees and stay in the know 24/7.</p>
         </div>
       </div>
       <div class="col s4">
         <div class="promo">
-        <i class="material-icons">flash_on</i>
-        <p class="promo-caption">Speeds up development</p>
-        <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+        <div><%= image_tag("table4.jpg", :alt => "cover 1") %></div>
+        <p class="promo-caption center">One Click</p>
+        <p class="light center">Send wedding invitations to your guest with just one click.</p>
         </div>
       </div>
       <div class="col s4">
         <div class="promo">
-        <i class="material-icons">flash_on</i>
-        <p class="promo-caption">Speeds up development</p>
-        <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+        <div><%= image_tag("table14.jpg", :alt => "cover 1") %></div>
+        <p class="promo-caption center">Start now</p>
+        <p class="light center">Plan your guest tables.</p>
         </div>
       </div>
     </div>
