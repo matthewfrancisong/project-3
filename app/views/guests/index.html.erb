@@ -29,6 +29,15 @@
     Review RSVPs</li>
   </ul>
 
+  <% if @guests.count(:table_num) > 0 %>
+    <li class="active">Manage seating</li>
+    <li class="active">Review RSVPs</li>
+  <% else %>
+    <li>Manage seating</li>
+    <li>Review RSVPs</li>
+  <% end %>
+</ul>
+<div class = container>
 <h1>Guest List</h1>
 <% if @guests.count < 1 %>
 <p>Guest List is empty</p>

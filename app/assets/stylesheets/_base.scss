@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Spirax');
+@import url('https://fonts.googleapis.com/css?family=Spirax|Quicksand');
 
 $font-title: 'Spirax', cursive;
 $nav-bar: #427689;
-
+html{
+   font-family: Quicksand;
+}
 header, main, footer {
 
      padding-left: 11%;
@@ -17,4 +19,13 @@ header, main, footer {
 a.btn {
   background-color: #E8F7C0;
   color: black;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    width: 95%;
 }
