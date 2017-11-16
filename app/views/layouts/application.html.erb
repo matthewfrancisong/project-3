@@ -19,7 +19,8 @@
     <footer class="page-footer N/A transparent">
         <div class="footer-copyright black-text text-lighten-4">
           <div class="container">
-          © 2017 Copyright Text, property of Happy Couple.
+          © 2017 Copyright Text, property of The Happy Couple.
+            Done by Matt, Ray & Shui.
           </div>
         </div>
       </footer>
@@ -27,7 +28,7 @@
 
     <ul id="slide-out" class="side-nav fixed">
       <% unless admin_signed_in? %>
-          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>Happy<% end %></li>
+          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>Home<% end %></li>
           <li><%= link_to new_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">border_color</i>Sign up<% end %></li>
           <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">assignment_ind</i>Sign In<% end %></li>
         <% else %>
