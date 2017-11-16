@@ -19,7 +19,7 @@ Cards labelled in Orange are the MVP(Minimum Viable Feature for our website)
 ![trello_user_story](/project-log/trello_user_story.png)
 
 ### Entity Relationship Diagram (ERD)
-Our ERD is a one to many relationship
+Our ERD is a one to many relations hip
 ![erd](/project-log/erd.png)
 
 ### Wireframes for main functionality
