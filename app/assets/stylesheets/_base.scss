@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Spirax|Quicksand');
 
 $font-title: 'Spirax', cursive;
-$nav-bar: #427689;
+$nav-bar: #926D99;
 html{
    font-family: Quicksand;
 }
@@ -16,10 +16,6 @@ header, main, footer {
      }
    }
 
-a.btn {
-  background-color: #E8F7C0;
-  color: black;
-}
 body {
     display: flex;
     min-height: 100vh;
@@ -29,6 +25,56 @@ main {
     flex: 1 0 auto;
     width: 95%;
 }
-.field input text_field{
-  color: red;
+h1{
+  text-align:center;
+  font-weight: bold
+}
+a.btn {
+  background-color: #E8F7C0;
+  color: black;
+}
+.btn:hover{
+  background-color:#6BBAA7 !important;
+}
+.btn{
+  background-color:#E8F7C0 !important;
+  color: black;
+}
+
+.input-field .prefix.active{
+  color: #6BBAA7;
+}
+input[type=email]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+input[type=text]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+input[type=password]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+input[type=date]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+input[type=time]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+input[type=number]:not(.browser):focus:not([readonly]){
+    border-bottom: 1px solid #6BBAA7 ;
+    box-shadow: 0 1px 0 0 #6BBAA7 ;
+}
+//calendar
+.picker__date-display{
+  background-color: #6BBAA7;
+}
+.picker__close, .picker__today, .picker__day.picker__day--today{
+  color: #6BBAA7;
+}
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
+  background-color: #FCCB73;
 }

@@ -34,7 +34,12 @@
       <ul class="progressbar">
         <li class="active">Add guests</li>
         <li class="active">Send emails</li>
-        <li class="active">Manage seating</li>
+        <% if @alltabled_guests.count > 0 %>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %>
+          Manage seating</li>
         <li>Review RSVPs</li>
     </ul>
 

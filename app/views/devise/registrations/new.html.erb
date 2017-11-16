@@ -1,11 +1,11 @@
 <div class="container">
-<h2>Sign up</h2>
-
+<h1 style=>Sign up</h1>
+<br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :form_type, :value => 'register' %>
 
-  <div class="field">
+  <div class="input-field">
     <i class="material-icons prefix">mail</i>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -13,29 +13,29 @@
 
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <i class="material-icons prefix">account_circle</i>
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <i class="material-icons prefix">security</i>
     <%= f.label :password %>
+    <em class = "passwordmin"><%= @minimum_password_length %> characters minimum</em>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password , autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <i class="material-icons prefix">security</i>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class: 'btn', style: 'background-color:#E8F7C0; color:black;' %>
+<br>
+  <div class="actions" style="text-align: center;">
+    <%= f.submit "Sign up", class: 'btn', style: ' color:black;' %>
   </div>
 
   <% end %>

@@ -20,6 +20,7 @@ class GuestsController < ApplicationController
 
   def new
     @new_guest = Guest.new
+    @guests = Guest.where(admin_id: current_admin[:id])
   end
 
   def edit

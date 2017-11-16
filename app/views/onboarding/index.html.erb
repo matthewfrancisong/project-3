@@ -1,6 +1,11 @@
+<ul id="slide-out" class="side-nav fixed right-aligned">
+</ul>
+<ul id="slide-out" class="side-nav fixed">
+</ul>
 <div class="container">
 
-<h3>Let's Introduce Ourselves!</h3>
+<h1>Let's Introduce Ourselves!</h1>
+<br>
 <%= form_for(@admin, url: onboarding_index_path(@admin), html: {method: "put"}) do |f| %>
 <%= f.hidden_field :form_type, :value => "wedding" %>
 
@@ -13,39 +18,40 @@
     </ul>
     <% end %>
 
-    <div class="field">
+    <div class="input-field">
       <%= f.label :Couple_names %><br />
       <%= f.text_field :title, placeholder: "e.g. Shane & Elizabeth", autofocus: true %>
     </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Wedding_Date %><br />
-    <%= f.date_field :date,  autofocus: true %>
+    <%= f.date_field :date,  autofocus: true, class: 'datepicker' %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Wedding_start_time %><br />
-    <%= f.time_field :time,  autofocus: true %>
+    <%= f.time_field :time,  autofocus: true, class: 'timepicker' %>
   </div>
 
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Venue %><br />
     <%= f.text_field :venue, placeholder: "e.g. Pan Pacific Ballroom 3", autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Number_of_Wedding_tables %><br />
     <%= f.number_field :num_tables,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Number_of_Wedding_seats %><br />
     <%= f.number_field :num_seats,  autofocus: true %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Get Started!" %>
+<br>
+  <div class="actions" style= "text-align: center;">
+    <%= f.submit "Get Started!", class: 'btn pulse'  %>
   </div>
+  <br>
 <% end %>
 </div>

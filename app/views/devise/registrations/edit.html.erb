@@ -6,6 +6,7 @@
   <%= f.hidden_field :form_type, :value => 'wedding' %>
 
   <div class="field">
+  <div class="input-field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -14,7 +15,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-   <div class="field">
+   <div class="input-field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "on" %>
     <% if @minimum_password_length %>
@@ -23,42 +24,42 @@
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Wedding_Date %><br />
     <%= f.date_field :date,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Wedding_start_time %><br />
     <%= f.time_field :time,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Couple_names %><br />
     <%= f.text_field :title,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Venue %><br />
     <%= f.text_field :venue,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Number_of_tables %><br />
     <%= f.number_field :num_tables,  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="input-field">
     <%= f.label :Number_of_seats %><br />
     <%= f.number_field :num_seats,  autofocus: true %>
   </div>

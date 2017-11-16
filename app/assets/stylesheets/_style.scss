@@ -35,6 +35,12 @@ h1.title{
    right: auto !important;
    left: 75%;
   }
+  //sign up page
+  .passwordmin{
+    position: absolute;
+    top: -1px;
+    left: 5%;
+  }
 // table page
 #table-out {
   background-color: $nav-bar;
@@ -94,9 +100,7 @@ h1.title{
 #slide-out li i {
   color: white;
 }
-#slide-out li:hover {
-   background-color: red;
-}
+
 #slide-out {
   background-color: $nav-bar;
   width: 12%;
@@ -130,7 +134,18 @@ h1.title{
   widows: 100%;
   vertical-align:middle;
 }
-
+// guest list
+.guestlistbtn {
+  display: flex;
+  justify-content: center;
+}
+.guestlistbtn .btn{
+  margin: 30px;
+}
+#edit{
+  padding: 0px;
+  width: 45px;
+}
 
 // progress bar
  .progressbar {

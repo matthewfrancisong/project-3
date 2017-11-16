@@ -1,4 +1,3 @@
-<div class = container>
 
   <ul class="progressbar">
     <% if @guests.count > 0 %>
@@ -20,34 +19,30 @@
       <li>
     <% end %>
       Manage seating</li>
-
-    <% if @guests.group(:RSVP).distinct.count(:RSVP).length > 1 %>
+    <% if @guests.where.not(RSVP: nil).count > 0 %>
       <li class="active">
     <% else %>
       <li>
     <% end %>
     Review RSVPs</li>
-  </ul>
-
-  <% if @guests.count(:table_num) > 0 %>
-    <li class="active">Manage seating</li>
-    <li class="active">Review RSVPs</li>
-  <% else %>
-    <li>Manage seating</li>
-    <li>Review RSVPs</li>
-  <% end %>
 </ul>
-<div class = container>
+<br>
+<div class = "container">
+  <br>
 <h1>Guest List</h1>
+<br>
 <% if @guests.count < 1 %>
-<p>Guest List is empty</p>
+<p style = "text-align: center;">Guest List is empty</p>
 <% end %>
+<div class = 'guestlistbtn'>
+  <%= link_to new_guest_path, class: "btn hoverable waves-effect" do %>Add Guest<% end %>
 <% if @guests.count > 0 %>
-<%= link_to email_index_path, class: "btn" do %>Send Email<% end %>
-<%= link_to tables_path, class: "btn" do %>Manage Seating<% end %>
+<%= link_to email_index_path, class: "btn hoverable waves-effect" do %>Send Email<% end %>
+<%= link_to tables_path, class: "btn hoverable waves-effect" do %>Manage Seating<% end %>
 <% end %>
-<%= link_to new_guest_path, class: "btn" do %>Add Guest<% end %>
-
+</div>
+<br>
+<br>
 <table class="highlight">
   <thead>
     <tr>
@@ -79,7 +74,7 @@
           <%= f.select :check_in, ([[''],["Yes",true],["No",false]]),{}, onchange: "this.form.submit()" %>
         <% end %>
       </td>
-      <td><%= link_to "edit", edit_guest_path(guest) %></td>
+      <td><%= link_to "edit", edit_guest_path(guest),id: "edit", class: "btn hoverable waves-effect" %></td>
     </tr>
 
   <% end %>
