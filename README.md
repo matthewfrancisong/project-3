@@ -58,12 +58,13 @@ Have a visual layout of tables and chairs that users can drag and drop guest ont
 
 
 #### Built with:
-Ruby v 2.4.2
-Rails v 5.1.4
-Postgresql Database
-Materialize
-Javascript
-Sendgrid
+  * Ruby v 2.4.2
+  * Rails v 5.1.4
+  * Postgresql Database
+  * Materialize
+  * Javascript
+  * Sendgrid
+  * Heroku Cloud Server
 
 #### A Rails Application by:
 Ray, Shui and Matthew
