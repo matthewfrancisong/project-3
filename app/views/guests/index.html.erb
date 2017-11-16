@@ -20,22 +20,12 @@
       <li>
     <% end %>
       Manage seating</li>
-
-    <% if @guests.group(:RSVP).distinct.count(:RSVP).length > 1 %>
+    <% if @guests.where.not(RSVP: nil).count > 0 %>
       <li class="active">
     <% else %>
       <li>
     <% end %>
     Review RSVPs</li>
-  </ul>
-
-  <% if @guests.count(:table_num) > 0 %>
-    <li class="active">Manage seating</li>
-    <li class="active">Review RSVPs</li>
-  <% else %>
-    <li>Manage seating</li>
-    <li>Review RSVPs</li>
-  <% end %>
 </ul>
 <div class = container>
 <h1>Guest List</h1>
