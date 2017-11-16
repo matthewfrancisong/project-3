@@ -1,6 +1,6 @@
 
 p {
-  font-size: 30px;
+  font-size: 20px;
 }
 body {
     display: flex;
@@ -38,7 +38,11 @@ h1.title{
   text-align: center;
   font-size: 18px;
 }
-
+#toast-container {
+   top: 45px !important;
+   right: auto !important;
+   left: 75%;
+  }
 // table page
 #table-out {
   background-color: $nav-bar;
@@ -49,63 +53,63 @@ h1.title{
   background-color: #E8F7C0;
   color: black;
   border: 0px;
-  font-size: 25px;
+  font-size: 18px;
 }
 #removetable{
   background-color: #90708C;
   color: black;
   border: 0px;
   text-align: center;
+  font-size: 18px;
 }
 #addform{
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   color: white;
   display: inline;
-}
-
-#removeform{
-  height: 50px;
-}
-.hidden{
-  display: none;
-}
-.sideprofile{
-  font-size: 15px;
-  text-align: center;
-}
-.tablesize{
-  height: 400px;
-}
-
-#toast-container {
-   top: 45px !important;
-   right: auto !important;
-   left: 75%;
-  }
-
-//apllication
-#slide-out li i {
-  color: white;
-}
-#sideprofile{
-  font-size: 20px;
-  text-align: center;
+  height: 15px;
 }
 #listheader{
   background-color: $nav-bar;
 }
-#listitem{
-  background-color: $nav-bar;
-  color: black;
+.guesttable{
+  padding-bottom: 0px;
 }
-#homeOne{
+.addingform{
+  display: flex;
+  justify-content: flex-start;
+}
+.hidden{
+  display: none;
+}
+
+.tablesize{
+  height: 400px;
+}
+//Home landing page
+#homeOnePic{
   width: 100%
+}
+.promo i{
+  font-size: 20rem;
+  display: block;
+}
+//apllication NAV Bars
+#slide-out li i {
+  color: white;
 }
 #slide-out {
   background-color: $nav-bar;
   width: 11%;
   color: white;
+}
+//dayys left with responses
+.sideprofile{
+  font-size: 30px;
+  text-align: center;
+}
+#days {
+  font-size: 30px;
 }
 #navOne {
   padding: 10px 35% 0 35%;
@@ -124,15 +128,8 @@ h1.title{
   color: white;
 }
 
-#days {
-  font-size: 30px;
-}
 
 // progress bar
-.container {
-     width: 600px;
-     margin: 100px auto;
- }
  .progressbar {
      counter-reset: step;
  }

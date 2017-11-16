@@ -21,6 +21,11 @@ class TablesController < ApplicationController
       @table_list[tabled_guest.table_num] << tabled_guest
     end
 
+    @current_seats = current_admin.num_seats
+
+
+
+
     # @table_list[@alltabled_guests.first.table_num - 1] << @alltabled_guests.first
 
     # render json: {
@@ -88,7 +93,7 @@ class TablesController < ApplicationController
   end
 
   def update
-    # render json: params
+    # finding guest with same table_num, changing to integer
     table_number = params[:guest][:table_num].to_i
     @guest = Guest.find(params[:table_guest_id])
     # render json: table_number

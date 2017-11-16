@@ -5,20 +5,18 @@
         <% @guestlists.each do |g| %>
           <tbody>
             <td class = "guesttable">
-              <td id="addform" class="row">
-
-                  <div class="row">
+              <td class="row">
+                  <div id="addform" class="row">
                     <div class="col s4">
                       <%= g.name %>
                     </div>
                     <div class="happy col s8">
-                      <%= form_for(g, :html => {:class => 'addform', :style => 'display:inline-block;'}, url: tables_path) do |f| %>
+                      <%= form_for(g, :html => {:class => 'addingform'}, url: tables_path) do |f| %>
                       <%= f.number_field :table_num, min: 1, max: current_admin.num_tables %>
                       <%= hidden_field_tag 'table_guest_id', g.id %>
                       <%= f.submit("+", id: 'addtable', class: 'btn') do%>
                     </div>
                   </div>
-
                   <% end %>
                 <% end %>
               </td>
@@ -30,7 +28,7 @@
 
     <% if alert %>
       <script type="text/javascript">
-      Materialize.toast('Table is full!', 1000, 'red rounded')
+      Materialize.toast('Table is full!', 2000, 'red rounded')
       </script>
     <% end %>
 
@@ -42,7 +40,10 @@
         <table class="centered">
           <thead>
             <tr>
-              Table : <%= key %> Spots left : <%=current_admin.num_seats%>
+              Table : <%= key %>
+              <br>
+              Spots left : <%=@current_seats-value.count%>
+              <br>
             </tr>
           </thead>
           <tbody>
@@ -57,7 +58,7 @@
                     <%= form_for(v, :html => {:class => 'removeform'}, url: tables_path) do |f| %>
                     <%= f.hidden_field :table_num, value: nil %>
                     <%= hidden_field_tag 'table_guest_id', v.id %>
-                    <%= f.submit("-", id: 'removetable', class: 'btn') %>
+                    <%= f.submit("-", id: 'removetable', class: 'btn btn-floating') %>
                   </div>
                     </div>
 
