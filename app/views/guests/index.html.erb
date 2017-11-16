@@ -60,6 +60,8 @@
         <td>Yes</td>
       <% elsif guest.RSVP == false %>
         <td>No</td>
+      <% else %>
+        <td></td>
       <% end %>
 
       <td><%= guest.table_num %></td>
