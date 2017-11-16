@@ -9,9 +9,13 @@ class GuestsController < ApplicationController
 
 
   def create
-    current_admin.guests.create(post_params)
+    if current_admin.guests.create(post_params)[:id]
     flash[:notice] = "#{post_params[:name]} has been added to the list!"
     redirect_to new_guest_path
+    else
+      flash[:notice] = "Name cannot be blank."
+      redirect_to new_guest_path
+    end
   end
 
   def new
