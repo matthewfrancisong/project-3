@@ -12,7 +12,7 @@ div.wrapper{
 }
 
 h1{
-  font-size: 150px;
+  font-size: 100px;
   font-weight: bold;
   font-family: $font-title;
   text-align: center;
@@ -40,18 +40,18 @@ h1{
   width: 15%;
   color: white;
 }
-#addtable{
-  background-color: #E8F7C0;
-  color: black;
+.addtable{
   border: 0px;
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
+  width: 60px;
 }
-#removetable{
-  background-color: #90708C;
-  color: black;
+.removetable{
+  background-color: #FCCB73 !important;
   border: 0px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  border-radius: 50%;
 }
 #addform{
   text-align: center;
@@ -153,8 +153,8 @@ h1{
   margin-left: 23%;
 }
 //email page
-.email #textarea.message.text_area_size{
-  height: 500px !important;
+#message{
+  height: 300px !important;
 }
 
 // progress bar

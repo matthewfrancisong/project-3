@@ -7,9 +7,10 @@ Planning for a wedding can be a nightmare. TheHappyCouple to the rescue! This we
 https://thehappycouple.herokuapp.com/guests
 
 ### Landing Page
+![landingpage](/project-log/landingpage.png)
 
 ### Guest List Manager
-This is the page where users can manage the guest they have added. They could manually edit the RSVP status of their guest. In addition, you can send a check-in Email to all ur guest and get them to indicate if they are present at the wedding venue. 
+This is the page where users can manage the guest they have added. They could manually edit the RSVP status of their guest. In addition, you can send a check-in Email to all ur guest and get them to indicate if they are present at the wedding venue.
 ![guestlistpage](/project-log/guestlistpage.png)
 
 
@@ -44,9 +45,6 @@ To further enhance the intuitive nature of guiding users through the different p
 ![improveduserflow](/project-log/improveduserflow.png)
 
 
-
-
-
 ### Potential Improvements
 ###### 1) Introduce Facebook Login
 Import contacts from your facebook friends.
@@ -59,9 +57,6 @@ Users can use Whatsapp or messaging to send Wedding Invites
 Have a visual layout of tables and chairs that users can drag and drop guest onto.
 
 
-
-
-
 #### Built with:
 Ruby v 2.4.2
 Rails v 5.1.4
@@ -69,8 +64,6 @@ Postgresql Database
 Materialize
 Javascript
 Sendgrid
-
-
 
 #### A Rails Application by:
 Ray, Shui and Matthew

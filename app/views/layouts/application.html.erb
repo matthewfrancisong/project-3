@@ -13,23 +13,33 @@
 
 
   <body>
+    <main>
+    <%= yield %>
+    </main>
+    <footer class="page-footer N/A transparent">
+        <div class="footer-copyright black-text text-lighten-4">
+          <div class="container">
+          © 2017 Copyright Text, property of MRS.
+          </div>
+        </div>
+      </footer>
 
 
     <ul id="slide-out" class="side-nav fixed">
       <% unless admin_signed_in? %>
-          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>TheHappyCouple<% end %></li>
+          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">home</i>HappyCouple<% end %></li>
           <li><%= link_to new_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">border_color</i>Sign up<% end %></li>
           <li><%= link_to new_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">assignment_ind</i>Sign In<% end %></li>
         <% else %>
-          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>TheHappyCouple<% end %></li>
+          <li><%= link_to root_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium" >home</i>HappyCouple<% end %></li>
           <li><%= link_to guests_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">people</i>Guestlist<% end %></li>
           <li><%= link_to edit_admin_registration_path, id: "navOne", class: "brand-logo hoverable waves-effect" do %><i class="material-icons medium">portrait</i>Profile<% end %></li>
           <li><%= link_to destroy_admin_session_path, id: "navOne", class: "brand-logo hoverable waves-effect", method: :delete do %><i class="material-icons medium">exit_to_app</i>Log Out<% end %></li>
         <% end %>
       </ul>
 
+    <% if admin_signed_in? && !current_page?(tables_path)%>
       <ul id="slide-out" class="side-nav fixed right-aligned">
-        <% if admin_signed_in? %>
         <div>
           <table class="centered">
           <% if $response %>
@@ -79,18 +89,12 @@
       </div>
           </tbody>
           <% end %>
-      <% end %>
     </ul>
-    <main>
-    <%= yield %>
-    </main>
-    <footer class="page-footer N/A transparent">
-        <div class="footer-copyright black-text text-lighten-4">
-          <div class="container">
-          © 2017 Copyright Text, property of MRS.
-          </div>
-        </div>
-      </footer>
+  <% end %>
+  <% unless admin_signed_in? %>
+  <ul id="slide-out" class="side-nav fixed right-aligned">
+  </ul>
+  <% end %>
 
 
   </body>
