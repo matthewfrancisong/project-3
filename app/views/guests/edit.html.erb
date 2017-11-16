@@ -1,7 +1,6 @@
 <div class = container>
 
 <h1>Update Guest</h1>
-
 <%= form_for @guest do |f| %>
   <%= f.label("Name:")%>
   <%= f.text_field :name %>
@@ -11,6 +10,7 @@
   <%= f.select :RSVP, (['',["Yes",true],["No",false]]) %>
   <%= f.submit("Update", class: 'btn') %>
 <% end %>
+
 
 <p><%= button_to "Delete Guest", guest_path(@guest), data: { confirm: "Are you sure?" },method: :delete, :class => "btn" %></p>
 

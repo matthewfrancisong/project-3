@@ -1,15 +1,19 @@
-<ul class="progressbar">
-    <li class="active">Add guests</li>
-    <% if @message %>
-      <li class="active">
-    <% else %>
-      <li>
-    <% end %>
-    Send emails</li>
-    <li>Manage seating</li>
-    <li>Review RSVPs</li>
-</ul>
+
 <div class = container>
+  <ul class="progressbar">
+      <li class="active">Add guests</li>
+      <% if @message %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+      Send emails</li>
+      <li>Manage seating</li>
+      <li>Review RSVPs</li>
+  </ul>
+  <br>
+  <br>
+  <br>
 
 <h4>Customize your E-mail message to send to all your guests</h4><br>
 
@@ -18,16 +22,16 @@
 
 <br>
 <h5>Message</h5>
-<%= form_tag(email_index_path, method: :post) %>
-<%= text_area_tag 'message', nil,:placeholder => "#Your Main message here!
+<%= form_tag(email_index_path,:html => {:class => 'email'}, method: :post) %>
+<%= text_area_tag 'message',nil,:placeholder => "#Your Main message here!
 E.g. Hope you have been well! Michelle and I will be getting married on 23th Sept at St Peters and Paul.
 Would love to invite you and your family for our wedding mass and lunch reception.
 
 ** By default, our E-mail delivery service will greet every individual unique guest,
 show RSVP link, show your wedding details such as location, time, date and include email regards.
 Kindly exclude them from your email", class: 'text_area_size'%>
-<%= submit_tag("Submit", class: 'btn') %>
-
+<br>
+<%= submit_tag("Submit", class: 'btn hoverable waves-effect') %>
 </div>
 
 <!-- '“Dearest friend, I invite you and your family to

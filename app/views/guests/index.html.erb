@@ -1,4 +1,9 @@
-
+<div class = "container">
+  <% if alert %>
+    <script type="text/javascript">
+    Materialize.toast('Email Sent Successfully !', 4000, 'rounded')
+    </script>
+  <% end %>
   <ul class="progressbar">
     <% if @guests.count > 0 %>
       <li class="active">
@@ -6,13 +11,12 @@
       <li>
     <% end %>
       Add guests</li>
-    <% if $email_sent %>
+    <% if $email_sent == true %>
       <li class="active">
     <% else %>
       <li>
     <% end %>
     Send emails</li>
-
     <% if @guests.count(:table_num) > 0 %>
       <li class="active">
     <% else %>
@@ -26,8 +30,8 @@
     <% end %>
     Review RSVPs</li>
 </ul>
-<br>
-<div class = "container">
+  <br>
+  <br>
   <br>
 <h1>Guest List</h1>
 <br>
@@ -78,8 +82,6 @@
     </tr>
 
   <% end %>
-
-
 </tbody>
 
 </table>

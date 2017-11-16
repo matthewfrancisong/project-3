@@ -31,9 +31,10 @@ h1.title{
   font-size: 18px;
 }
 #toast-container {
-   top: 45px !important;
+   top: 90px !important;
    right: auto !important;
-   left: 75%;
+   left: 70%;
+   font-weight: bold;
   }
   //sign up page
   .passwordmin{
@@ -84,6 +85,7 @@ h1.title{
 .tablesize{
   height: 400px;
 }
+
 //Home landing page
 #homeOnePic{
   width: 100%
@@ -145,6 +147,18 @@ h1.title{
 #edit{
   padding: 0px;
   width: 45px;
+}
+// guest add
+
+.guestadd .btn{
+  margin: 30px;
+}
+.guestadd .submit{
+  margin-left: 23%;
+}
+//email page
+.email #textarea.message.text_area_size{
+  height: 500px !important;
 }
 
 // progress bar
